@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Container class="javax.swing.JDialog" name="jDialog1">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+    </Container>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -25,57 +42,58 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="alumCB" min="-2" max="-2" attributes="0"/>
+                          <Component id="newsPaperCB" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="carbonBillsLBL" pref="138" max="32767" attributes="0"/>
                                   <Component id="transportLBL" alignment="0" max="32767" attributes="0"/>
                                   <Component id="recyclingLBL" alignment="1" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="oilBillLBL" alignment="0" min="-2" pref="123" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                  <Component id="flightsLessFourLBL" min="-2" max="-2" attributes="0"/>
-                              </Group>
                           </Group>
-                          <Component id="alumCB" min="-2" max="-2" attributes="0"/>
-                          <Component id="newsPaperCB" min="-2" max="-2" attributes="0"/>
+                          <Component id="flightsLessFourLBL" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="flightLessFourTF" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                          <Component id="flightMoreFourTF" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="carYearlyMileageLBL" min="-2" max="-2" attributes="0"/>
-                                  <Component id="flightsMoreFourLBL" min="-2" max="-2" attributes="0"/>
-                                  <Component id="flightLessFourTF" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="carYearlyMileageTF" alignment="0" pref="180" max="32767" attributes="0"/>
-                                      <Component id="flightMoreFourTF" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
+                              <Component id="carYearlyMileageTF" min="-2" pref="180" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                              <Component id="transportEnterBTN" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="flightsMoreFourLBL" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="carYearlyMileageLBL" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
+                              <Component id="totalCarbonFootprintLBL" min="-2" pref="192" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="gasBillLBL" min="-2" pref="123" max="-2" attributes="0"/>
-                          <Component id="elctricBillLBL" min="-2" pref="138" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="oilBillTF" pref="77" max="32767" attributes="0"/>
-                          <Component id="gasBillTF" alignment="0" max="32767" attributes="0"/>
-                          <Component id="electricBillTF" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="elctricBillLBL" min="-2" pref="138" max="-2" attributes="0"/>
+                                  <Component id="gasBillLBL" min="-2" pref="123" max="-2" attributes="0"/>
+                                  <Component id="oilBillLBL" min="-2" pref="123" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="oilBillTF" pref="77" max="32767" attributes="0"/>
+                                  <Component id="gasBillTF" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="electricBillTF" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="44" pref="44" max="-2" attributes="0"/>
+                              <Component id="billsEnterBTN" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace min="81" pref="264" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="totalCarbonFootprintLBL" min="-2" pref="192" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -84,45 +102,56 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Component id="carbonBillsLBL" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="elctricBillLBL" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="electricBillTF" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="gasBillTF" min="-2" max="-2" attributes="0"/>
-                  <Component id="gasBillLBL" alignment="1" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="gasBillTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="gasBillLBL" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="oilBillTF" min="-2" max="-2" attributes="0"/>
-                  <Component id="oilBillLBL" alignment="0" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="oilBillTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="billsEnterBTN" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="oilBillLBL" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               <Component id="recyclingLBL" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="newsPaperCB" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-              <Component id="alumCB" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="alumCB" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
               <Component id="transportLBL" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="flightsLessFourLBL" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="flightLessFourTF" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="flightsMoreFourLBL" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-              <Component id="flightMoreFourTF" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="carYearlyMileageLBL" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="totalCarbonFootprintLBL" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="carYearlyMileageTF" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                      <Component id="flightsMoreFourLBL" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="flightMoreFourTF" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="carYearlyMileageLBL" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="carYearlyMileageTF" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                      <Component id="totalCarbonFootprintLBL" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="transportEnterBTN" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="37" max="32767" attributes="0"/>
+              <EmptySpace pref="25" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -205,6 +234,21 @@
     <Component class="javax.swing.JTextField" name="flightMoreFourTF">
     </Component>
     <Component class="javax.swing.JTextField" name="carYearlyMileageTF">
+    </Component>
+    <Component class="javax.swing.JButton" name="billsEnterBTN">
+      <Properties>
+        <Property name="label" type="java.lang.String" value="Enter"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="transportEnterBTN">
+      <Properties>
+        <Property name="label" type="java.lang.String" value="Enter"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton3">
+      <Properties>
+        <Property name="label" type="java.lang.String" value="Submit"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
