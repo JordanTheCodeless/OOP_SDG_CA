@@ -25,73 +25,73 @@ public class QuizGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        titlLBL = new javax.swing.JLabel();
+        exitBTN = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jLabel2 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        questioTA = new javax.swing.JTextArea();
+        instuctionLBL = new javax.swing.JLabel();
+        nextBTN = new javax.swing.JButton();
+        scoreLBL = new javax.swing.JLabel();
+        startBTN = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
+        factTA = new javax.swing.JTextArea();
+        answer1RBTN = new javax.swing.JRadioButton();
+        answer2RBTN = new javax.swing.JRadioButton();
+        answer3RBTN = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel1.setFont(new java.awt.Font("Sitka Small", 0, 18)); // NOI18N
-        jLabel1.setText("Welcome to the Quiz!");
+        titlLBL.setBackground(new java.awt.Color(204, 204, 204));
+        titlLBL.setFont(new java.awt.Font("Sitka Small", 0, 18)); // NOI18N
+        titlLBL.setText("Welcome to the Quiz!");
 
-        jButton1.setBackground(new java.awt.Color(255, 51, 0));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Exit");
+        exitBTN.setBackground(new java.awt.Color(255, 51, 0));
+        exitBTN.setForeground(new java.awt.Color(255, 255, 255));
+        exitBTN.setText("Exit");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("QUESTIONS WILL BE DISPLAYED HERE");
-        jScrollPane1.setViewportView(jTextArea1);
+        questioTA.setColumns(20);
+        questioTA.setRows(5);
+        questioTA.setText("QUESTIONS WILL BE DISPLAYED HERE");
+        jScrollPane1.setViewportView(questioTA);
 
-        jLabel2.setFont(new java.awt.Font("Sitka Small", 0, 12)); // NOI18N
-        jLabel2.setText("Select one of the three buttons");
+        instuctionLBL.setFont(new java.awt.Font("Sitka Small", 0, 12)); // NOI18N
+        instuctionLBL.setText("Select one of the three buttons");
 
-        jButton2.setBackground(new java.awt.Color(51, 255, 51));
-        jButton2.setText("Next");
+        nextBTN.setBackground(new java.awt.Color(51, 255, 51));
+        nextBTN.setText("Next");
 
-        jLabel3.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel3.setFont(new java.awt.Font("Sitka Small", 0, 12)); // NOI18N
-        jLabel3.setText("Score: ");
+        scoreLBL.setBackground(new java.awt.Color(204, 204, 204));
+        scoreLBL.setFont(new java.awt.Font("Sitka Small", 0, 12)); // NOI18N
+        scoreLBL.setText("Score: ");
 
-        jButton3.setBackground(new java.awt.Color(51, 255, 51));
-        jButton3.setText("Start");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        startBTN.setBackground(new java.awt.Color(51, 255, 51));
+        startBTN.setText("Start");
+        startBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                startBTNActionPerformed(evt);
             }
         });
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jTextArea2.setText("QUESTION FACT\n");
-        jScrollPane2.setViewportView(jTextArea2);
+        factTA.setColumns(20);
+        factTA.setRows(5);
+        factTA.setText("QUESTION FACT\n");
+        jScrollPane2.setViewportView(factTA);
 
-        jRadioButton1.setText("1");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        answer1RBTN.setText("1");
+        answer1RBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                answer1RBTNActionPerformed(evt);
             }
         });
 
-        jRadioButton2.setText("2");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        answer2RBTN.setText("2");
+        answer2RBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                answer2RBTNActionPerformed(evt);
             }
         });
 
-        jRadioButton3.setText("3");
+        answer3RBTN.setText("3");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,9 +101,9 @@ public class QuizGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(31, 31, 31)
-                        .addComponent(jButton1)
+                        .addComponent(exitBTN)
                         .addGap(97, 97, 97)
-                        .addComponent(jLabel1))
+                        .addComponent(titlLBL))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(156, 156, 156)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,26 +114,26 @@ public class QuizGUI extends javax.swing.JFrame {
                 .addGap(77, 77, 77)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton3)
+                        .addComponent(startBTN)
                         .addGap(134, 134, 134))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jRadioButton1)
+                        .addComponent(answer1RBTN)
                         .addGap(57, 57, 57)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jLabel3))
+                    .addComponent(answer2RBTN)
+                    .addComponent(scoreLBL))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                        .addComponent(nextBTN)
                         .addGap(76, 76, 76))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(54, 54, 54)
-                        .addComponent(jRadioButton3)
+                        .addComponent(answer3RBTN)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(212, 212, 212)
-                .addComponent(jLabel2)
+                .addComponent(instuctionLBL)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -141,27 +141,27 @@ public class QuizGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jLabel1))
+                    .addComponent(exitBTN)
+                    .addComponent(titlLBL))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(75, 75, 75)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3))
+                            .addComponent(nextBTN)
+                            .addComponent(startBTN))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel2)
+                        .addComponent(instuctionLBL)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton3))
+                            .addComponent(answer2RBTN)
+                            .addComponent(answer1RBTN)
+                            .addComponent(answer3RBTN))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                        .addComponent(jLabel3)
+                        .addComponent(scoreLBL)
                         .addGap(29, 29, 29)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(23, 23, 23))))
@@ -170,17 +170,17 @@ public class QuizGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void startBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBTNActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_startBTNActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void answer1RBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_answer1RBTNActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_answer1RBTNActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void answer2RBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_answer2RBTNActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }//GEN-LAST:event_answer2RBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -218,18 +218,18 @@ public class QuizGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton answer1RBTN;
+    private javax.swing.JRadioButton answer2RBTN;
+    private javax.swing.JRadioButton answer3RBTN;
+    private javax.swing.JButton exitBTN;
+    private javax.swing.JTextArea factTA;
+    private javax.swing.JLabel instuctionLBL;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JButton nextBTN;
+    private javax.swing.JTextArea questioTA;
+    private javax.swing.JLabel scoreLBL;
+    private javax.swing.JButton startBTN;
+    private javax.swing.JLabel titlLBL;
     // End of variables declaration//GEN-END:variables
 }
