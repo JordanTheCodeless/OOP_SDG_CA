@@ -1,3 +1,27 @@
-/GregQuiz/build/
-/CleanEnergy/nbproject/private/
-/CleanEnergy/build/
+# Ignore NetBeans user-specific configurations
+**/nbproject/private/
+**/nbproject/private.properties
+**/nbproject/private.xml
+
+# Ignore build and output directories across all subfolders
+**/build/
+**/dist/
+
+# Ignore IDE-specific files globally
+*.iml
+.idea/
+*.vscode/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore temporary and backup files across all subfolders
+*.log
+*.tmp
+*.bak
+*.swp
+*.~*~
+
+# Allow specific files to override the ignore rules
+!**/nbproject/project.xml
