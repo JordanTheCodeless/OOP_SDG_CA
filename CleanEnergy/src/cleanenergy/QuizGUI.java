@@ -1,3 +1,5 @@
+package cleanenergy;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -40,6 +42,7 @@ public class QuizGUI extends javax.swing.JFrame {
         answer3RBTN = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         titlLBL.setBackground(new java.awt.Color(204, 204, 204));
         titlLBL.setFont(new java.awt.Font("Sitka Small", 0, 18)); // NOI18N
@@ -124,7 +127,7 @@ public class QuizGUI extends javax.swing.JFrame {
                     .addComponent(scoreLBL))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
                         .addComponent(nextBTN)
                         .addGap(76, 76, 76))
                     .addGroup(layout.createSequentialGroup()

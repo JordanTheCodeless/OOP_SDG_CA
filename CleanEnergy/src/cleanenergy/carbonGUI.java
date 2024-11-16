@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this */
-package carbonfootprint;
+package cleanenergy;
 
 /**
  *
@@ -59,6 +59,8 @@ public class carbonGUI extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(611, 377));
+        setResizable(false);
 
         carbonBillsLBL.setText("Carbon bills");
 
@@ -145,7 +147,7 @@ public class carbonGUI extends javax.swing.JFrame {
                                     .addComponent(electricBillTF, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addGap(44, 44, 44)
                                 .addComponent(billsEnterBTN)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
