@@ -17,6 +17,12 @@ public class GameManager {
     
     private void populateQuestions() {
         questions.add(new Question("Que pedo",15, "BUENO", "Malo"));
+        questions.add(new Question("Que pedo",15, "BUENO", "Malo"));
+        questions.add(new Question("Que pedo",15, "BUENO", "Malo"));
+        questions.add(new Question("Que pedo",15, "BUENO", "Malo"));
+        questions.add(new Question("Que pedo",15, "BUENO", "Malo"));
+        questions.add(new Question("Que pedo",15, "BUENO", "Malo"));
+        
          // Add more questions up to 10 as needed
     }
 

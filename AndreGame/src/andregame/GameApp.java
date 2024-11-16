@@ -18,8 +18,7 @@ public class GameApp {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        GameGUI appGUI = new GameGUI();
-        appGUI.setVisible(true);
+   
         
         Scanner scanner = new Scanner(System.in);
         GameEngine gameController = new GameEngine();
