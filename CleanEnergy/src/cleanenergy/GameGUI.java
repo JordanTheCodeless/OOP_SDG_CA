@@ -99,6 +99,11 @@ public class GameGUI extends javax.swing.JFrame {
         backBTN.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         backBTN.setForeground(new java.awt.Color(255, 51, 51));
         backBTN.setText("Back");
+        backBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBTNActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -186,6 +191,17 @@ public class GameGUI extends javax.swing.JFrame {
     private void inputBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputBoxActionPerformed
+
+    private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
+        // TODO add your handling code here:
+        CleanEnergyGUI mainGUI = new CleanEnergyGUI(); //declare and create
+        mainGUI.setVisible(true); //show
+        
+        this.setVisible(false); //hide this
+        System.out.println("closed"); //testing line
+        //this.setDefaultCloseOperation(MainAppGUI.EXIT_ON_CLOSE);
+        this.dispose(); //closes this frame as opposed to setVisible(false);
+    }//GEN-LAST:event_backBTNActionPerformed
 
     /**
      * @param args the command line arguments

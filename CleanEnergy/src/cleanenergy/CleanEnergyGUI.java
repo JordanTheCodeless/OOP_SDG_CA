@@ -26,21 +26,94 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        calcBTN = new javax.swing.JButton();
+        gameBTN = new javax.swing.JButton();
+        quizBTN = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        calcBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cleanenergy/calculator icon white background.jpg"))); // NOI18N
+        calcBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calcBTNActionPerformed(evt);
+            }
+        });
+
+        gameBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cleanenergy/controller icon white background.jpg"))); // NOI18N
+        gameBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gameBTNActionPerformed(evt);
+            }
+        });
+
+        quizBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cleanenergy/question mark white background.jpg"))); // NOI18N
+        quizBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quizBTNActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 606, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(calcBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58)
+                .addComponent(gameBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addComponent(quizBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 429, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(150, 150, 150)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(quizBTN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(gameBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(calcBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(148, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void calcBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcBTNActionPerformed
+        // TODO add your handling code here:
+        carbonGUI calc = new carbonGUI(); 
+        calc.setVisible(true); //show
+        
+        this.setVisible(false); //hide this
+        System.out.println("closed"); //testing line
+        //this.setDefaultCloseOperation(MainAppGUI.EXIT_ON_CLOSE);
+        this.dispose(); //closes this frame as opposed to setVisible(false);
+        
+    }//GEN-LAST:event_calcBTNActionPerformed
+
+    private void gameBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gameBTNActionPerformed
+        // TODO add your handling code here:
+        GameGUI game = new GameGUI(); //declare and create
+        game.setVisible(true); //show
+        
+        this.setVisible(false); //hide this
+        System.out.println("closed"); //testing line
+        //this.setDefaultCloseOperation(MainAppGUI.EXIT_ON_CLOSE);
+        this.dispose(); //closes this frame as opposed to setVisible(false);
+    }//GEN-LAST:event_gameBTNActionPerformed
+
+    private void quizBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quizBTNActionPerformed
+        // TODO add your handling code here:
+        QuizGUI quiz = new QuizGUI(); //declare and create
+        quiz.setVisible(true); //show
+        
+        this.setVisible(false); //hide this
+        System.out.println("closed"); //testing line
+        //this.setDefaultCloseOperation(MainAppGUI.EXIT_ON_CLOSE);
+        this.dispose(); //closes this frame as opposed to setVisible(false);
+    }//GEN-LAST:event_quizBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -72,11 +145,14 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CleanEnergyGUI().setVisible(true);
+                new CleanEnergyGUI().setVisible(false);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton calcBTN;
+    private javax.swing.JButton gameBTN;
+    private javax.swing.JButton quizBTN;
     // End of variables declaration//GEN-END:variables
 }

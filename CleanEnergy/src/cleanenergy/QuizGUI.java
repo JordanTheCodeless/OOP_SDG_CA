@@ -51,6 +51,11 @@ public class QuizGUI extends javax.swing.JFrame {
         exitBTN.setBackground(new java.awt.Color(255, 51, 0));
         exitBTN.setForeground(new java.awt.Color(255, 255, 255));
         exitBTN.setText("Exit");
+        exitBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitBTNActionPerformed(evt);
+            }
+        });
 
         questioTA.setColumns(20);
         questioTA.setRows(5);
@@ -184,6 +189,17 @@ public class QuizGUI extends javax.swing.JFrame {
     private void answer2RBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_answer2RBTNActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_answer2RBTNActionPerformed
+
+    private void exitBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBTNActionPerformed
+        // TODO add your handling code here:
+        CleanEnergyGUI mainGUI = new CleanEnergyGUI(); //declare and create
+        mainGUI.setVisible(true); //show
+        
+        this.setVisible(false); //hide this
+        System.out.println("closed"); //testing line
+        //this.setDefaultCloseOperation(MainAppGUI.EXIT_ON_CLOSE);
+        this.dispose();
+    }//GEN-LAST:event_exitBTNActionPerformed
 
     /**
      * @param args the command line arguments
