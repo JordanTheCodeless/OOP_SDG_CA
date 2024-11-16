@@ -18,6 +18,7 @@ public class GameApp {
     public static void main(String[] args) {
         // TODO code application logic here
         
+        //GIT IGNORE TEST
    
         
         Scanner scanner = new Scanner(System.in);
