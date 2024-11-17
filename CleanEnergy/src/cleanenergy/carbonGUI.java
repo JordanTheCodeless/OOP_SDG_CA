@@ -59,9 +59,11 @@ public class carbonGUI extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        totalCarbonFootprintLBL.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         totalCarbonFootprintLBL.setText("Total Carbon Footprint : 0 punds of C02");
         getContentPane().add(totalCarbonFootprintLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 192, -1));
 
+        backBTN.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         backBTN.setText("Back");
         backBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,25 +74,25 @@ public class carbonGUI extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        carbonBillsLBL.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        carbonBillsLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         carbonBillsLBL.setText("Carbon bills");
 
-        elctricBillLBL.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        elctricBillLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         elctricBillLBL.setText("Electric Bill Monthly :");
 
-        electricBillTF.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        electricBillTF.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
 
-        firstQuestionVAR.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        firstQuestionVAR.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         firstQuestionVAR.setText("Gas Bill Monthly :");
 
-        gasBillTF.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        gasBillTF.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
 
-        oilBillLBL.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        oilBillLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         oilBillLBL.setText("Oil Bill Monthly :");
 
-        oilBillTF.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        oilBillTF.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
 
-        billsEnterBTN.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        billsEnterBTN.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         billsEnterBTN.setLabel("Enter");
         billsEnterBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,7 +139,7 @@ public class carbonGUI extends javax.swing.JFrame {
         billsPaneLayout.setVerticalGroup(
             billsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(billsPaneLayout.createSequentialGroup()
-                .addGap(0, 31, Short.MAX_VALUE)
+                .addGap(0, 29, Short.MAX_VALUE)
                 .addComponent(carbonBillsLBL)
                 .addGap(8, 8, 8)
                 .addGroup(billsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,25 +168,25 @@ public class carbonGUI extends javax.swing.JFrame {
             }
         });
 
-        transportLBL.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        transportLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         transportLBL.setText("Transport");
 
-        flightsLessFourLBL.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        flightsLessFourLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         flightsLessFourLBL.setText("Amount of flights that are less than 4 hours :");
 
-        flightsMoreFourLBL.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        flightsMoreFourLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         flightsMoreFourLBL.setText("Amount of flights that were more than 4 hours :");
 
-        carYearlyMileageLBL.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        carYearlyMileageLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         carYearlyMileageLBL.setText("Cars yearly mileage :");
 
-        flightLessFourTF.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        flightLessFourTF.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
 
-        flightMoreFourTF.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        flightMoreFourTF.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
 
-        carYearlyMileageTF.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        carYearlyMileageTF.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
 
-        transportEnterBTN.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        transportEnterBTN.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         transportEnterBTN.setLabel("Enter");
         transportEnterBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -248,10 +250,10 @@ public class carbonGUI extends javax.swing.JFrame {
 
         jPanel1.add(TransportPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        recyclingLBL.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        recyclingLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         recyclingLBL.setText("Recycling");
 
-        newsPaperCB.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        newsPaperCB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         newsPaperCB.setText("Do you recycle Newspaper");
         newsPaperCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -259,7 +261,7 @@ public class carbonGUI extends javax.swing.JFrame {
             }
         });
 
-        alumCB.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        alumCB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         alumCB.setText("Do you recycle aluminum");
         alumCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -267,7 +269,7 @@ public class carbonGUI extends javax.swing.JFrame {
             }
         });
 
-        recyclingBTN.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        recyclingBTN.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         recyclingBTN.setLabel("Submit");
         recyclingBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -335,12 +337,9 @@ public class carbonGUI extends javax.swing.JFrame {
 
     private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
         // TODO add your handling code here:
-        CleanEnergyGUI mainGUI = new CleanEnergyGUI(); //declare and create
-        mainGUI.setVisible(true); //show
-        
-        this.setVisible(false); //hide this
-        System.out.println("closed"); //testing line
-        //this.setDefaultCloseOperation(MainAppGUI.EXIT_ON_CLOSE);
+        CleanEnergyGUI mainGUI = new CleanEnergyGUI(); 
+        mainGUI.setVisible(true); 
+        this.setVisible(false); 
         this.dispose();
     }//GEN-LAST:event_backBTNActionPerformed
 

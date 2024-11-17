@@ -45,12 +45,13 @@ public class QuizGUI extends javax.swing.JFrame {
         setResizable(false);
 
         titlLBL.setBackground(new java.awt.Color(204, 204, 204));
-        titlLBL.setFont(new java.awt.Font("Sitka Small", 0, 18)); // NOI18N
+        titlLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         titlLBL.setText("Welcome to the Quiz!");
 
         exitBTN.setBackground(new java.awt.Color(255, 51, 0));
+        exitBTN.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         exitBTN.setForeground(new java.awt.Color(255, 255, 255));
-        exitBTN.setText("Exit");
+        exitBTN.setText("Back");
         exitBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitBTNActionPerformed(evt);
@@ -58,21 +59,24 @@ public class QuizGUI extends javax.swing.JFrame {
         });
 
         questioTA.setColumns(20);
+        questioTA.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         questioTA.setRows(5);
         questioTA.setText("QUESTIONS WILL BE DISPLAYED HERE");
         jScrollPane1.setViewportView(questioTA);
 
-        instuctionLBL.setFont(new java.awt.Font("Sitka Small", 0, 12)); // NOI18N
+        instuctionLBL.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         instuctionLBL.setText("Select one of the three buttons");
 
         nextBTN.setBackground(new java.awt.Color(51, 255, 51));
+        nextBTN.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         nextBTN.setText("Next");
 
         scoreLBL.setBackground(new java.awt.Color(204, 204, 204));
-        scoreLBL.setFont(new java.awt.Font("Sitka Small", 0, 12)); // NOI18N
+        scoreLBL.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         scoreLBL.setText("Score: ");
 
         startBTN.setBackground(new java.awt.Color(51, 255, 51));
+        startBTN.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         startBTN.setText("Start");
         startBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,10 +85,12 @@ public class QuizGUI extends javax.swing.JFrame {
         });
 
         factTA.setColumns(20);
+        factTA.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         factTA.setRows(5);
         factTA.setText("QUESTION FACT\n");
         jScrollPane2.setViewportView(factTA);
 
+        answer1RBTN.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         answer1RBTN.setText("1");
         answer1RBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,6 +98,7 @@ public class QuizGUI extends javax.swing.JFrame {
             }
         });
 
+        answer2RBTN.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         answer2RBTN.setText("2");
         answer2RBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,6 +106,7 @@ public class QuizGUI extends javax.swing.JFrame {
             }
         });
 
+        answer3RBTN.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         answer3RBTN.setText("3");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -132,7 +140,7 @@ public class QuizGUI extends javax.swing.JFrame {
                     .addComponent(scoreLBL))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
                         .addComponent(nextBTN)
                         .addGap(76, 76, 76))
                     .addGroup(layout.createSequentialGroup()
@@ -192,12 +200,9 @@ public class QuizGUI extends javax.swing.JFrame {
 
     private void exitBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBTNActionPerformed
         // TODO add your handling code here:
-        CleanEnergyGUI mainGUI = new CleanEnergyGUI(); //declare and create
-        mainGUI.setVisible(true); //show
-        
-        this.setVisible(false); //hide this
-        System.out.println("closed"); //testing line
-        //this.setDefaultCloseOperation(MainAppGUI.EXIT_ON_CLOSE);
+        CleanEnergyGUI mainGUI = new CleanEnergyGUI();
+        mainGUI.setVisible(true); 
+        this.setVisible(false); 
         this.dispose();
     }//GEN-LAST:event_exitBTNActionPerformed
 

@@ -194,13 +194,10 @@ public class GameGUI extends javax.swing.JFrame {
 
     private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
         // TODO add your handling code here:
-        CleanEnergyGUI mainGUI = new CleanEnergyGUI(); //declare and create
-        mainGUI.setVisible(true); //show
-        
-        this.setVisible(false); //hide this
-        System.out.println("closed"); //testing line
-        //this.setDefaultCloseOperation(MainAppGUI.EXIT_ON_CLOSE);
-        this.dispose(); //closes this frame as opposed to setVisible(false);
+        CleanEnergyGUI mainGUI = new CleanEnergyGUI(); 
+        mainGUI.setVisible(true); 
+        this.setVisible(false); 
+        this.dispose();
     }//GEN-LAST:event_backBTNActionPerformed
 
     /**

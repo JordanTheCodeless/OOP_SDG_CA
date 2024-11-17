@@ -29,6 +29,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         calcBTN = new javax.swing.JButton();
         gameBTN = new javax.swing.JButton();
         quizBTN = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,6 +54,16 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(255, 51, 51));
+        jButton1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Exit");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -65,6 +76,10 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addComponent(quizBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(251, 251, 251))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -72,10 +87,11 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
                 .addGap(150, 150, 150)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(quizBTN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(gameBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(calcBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(148, Short.MAX_VALUE))
+                    .addComponent(gameBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(calcBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(43, 43, 43))
         );
 
         pack();
@@ -106,14 +122,16 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
 
     private void quizBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quizBTNActionPerformed
         // TODO add your handling code here:
-        QuizGUI quiz = new QuizGUI(); //declare and create
-        quiz.setVisible(true); //show
-        
-        this.setVisible(false); //hide this
-        System.out.println("closed"); //testing line
-        //this.setDefaultCloseOperation(MainAppGUI.EXIT_ON_CLOSE);
-        this.dispose(); //closes this frame as opposed to setVisible(false);
+        QuizGUI quiz = new QuizGUI(); 
+        quiz.setVisible(true); 
+        this.setVisible(false);
+        this.dispose(); 
     }//GEN-LAST:event_quizBTNActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,6 +171,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton calcBTN;
     private javax.swing.JButton gameBTN;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton quizBTN;
     // End of variables declaration//GEN-END:variables
 }

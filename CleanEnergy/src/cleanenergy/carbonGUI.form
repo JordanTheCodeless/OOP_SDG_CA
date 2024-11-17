@@ -32,6 +32,9 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="totalCarbonFootprintLBL">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Century Gothic" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Total Carbon Footprint : 0 punds of C02"/>
       </Properties>
       <Constraints>
@@ -42,6 +45,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="backBTN">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Century Gothic" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Back"/>
       </Properties>
       <Events>
@@ -108,7 +114,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="0" pref="31" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="29" max="32767" attributes="0"/>
                       <Component id="carbonBillsLBL" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -139,7 +145,7 @@
             <Component class="javax.swing.JLabel" name="carbonBillsLBL">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="18" style="0"/>
+                  <Font name="Century Gothic" size="18" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Carbon bills"/>
               </Properties>
@@ -147,7 +153,7 @@
             <Component class="javax.swing.JLabel" name="elctricBillLBL">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="18" style="0"/>
+                  <Font name="Century Gothic" size="18" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Electric Bill Monthly :"/>
               </Properties>
@@ -155,14 +161,14 @@
             <Component class="javax.swing.JTextField" name="electricBillTF">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="18" style="0"/>
+                  <Font name="Century Gothic" size="18" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="firstQuestionVAR">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="18" style="0"/>
+                  <Font name="Century Gothic" size="18" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Gas Bill Monthly :"/>
               </Properties>
@@ -170,14 +176,14 @@
             <Component class="javax.swing.JTextField" name="gasBillTF">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="18" style="0"/>
+                  <Font name="Century Gothic" size="18" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="oilBillLBL">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="18" style="0"/>
+                  <Font name="Century Gothic" size="18" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Oil Bill Monthly :"/>
               </Properties>
@@ -185,14 +191,14 @@
             <Component class="javax.swing.JTextField" name="oilBillTF">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="18" style="0"/>
+                  <Font name="Century Gothic" size="18" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="billsEnterBTN">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="18" style="0"/>
+                  <Font name="Century Gothic" size="18" style="0"/>
                 </Property>
                 <Property name="label" type="java.lang.String" value="Enter"/>
               </Properties>
@@ -270,7 +276,7 @@
             <Component class="javax.swing.JLabel" name="transportLBL">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="18" style="0"/>
+                  <Font name="Century Gothic" size="18" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Transport"/>
               </Properties>
@@ -278,7 +284,7 @@
             <Component class="javax.swing.JLabel" name="flightsLessFourLBL">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="18" style="0"/>
+                  <Font name="Century Gothic" size="18" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Amount of flights that are less than 4 hours :"/>
               </Properties>
@@ -286,7 +292,7 @@
             <Component class="javax.swing.JLabel" name="flightsMoreFourLBL">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="18" style="0"/>
+                  <Font name="Century Gothic" size="18" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Amount of flights that were more than 4 hours :"/>
               </Properties>
@@ -294,7 +300,7 @@
             <Component class="javax.swing.JLabel" name="carYearlyMileageLBL">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="18" style="0"/>
+                  <Font name="Century Gothic" size="18" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Cars yearly mileage :"/>
               </Properties>
@@ -302,28 +308,28 @@
             <Component class="javax.swing.JTextField" name="flightLessFourTF">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="18" style="0"/>
+                  <Font name="Century Gothic" size="18" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="flightMoreFourTF">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="18" style="0"/>
+                  <Font name="Century Gothic" size="18" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="carYearlyMileageTF">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="18" style="0"/>
+                  <Font name="Century Gothic" size="18" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="transportEnterBTN">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="18" style="0"/>
+                  <Font name="Century Gothic" size="18" style="0"/>
                 </Property>
                 <Property name="label" type="java.lang.String" value="Enter"/>
               </Properties>
@@ -385,7 +391,7 @@
             <Component class="javax.swing.JLabel" name="recyclingLBL">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="18" style="0"/>
+                  <Font name="Century Gothic" size="18" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Recycling"/>
               </Properties>
@@ -393,7 +399,7 @@
             <Component class="javax.swing.JCheckBox" name="newsPaperCB">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="18" style="0"/>
+                  <Font name="Century Gothic" size="18" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Do you recycle Newspaper"/>
               </Properties>
@@ -404,7 +410,7 @@
             <Component class="javax.swing.JCheckBox" name="alumCB">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="18" style="0"/>
+                  <Font name="Century Gothic" size="18" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Do you recycle aluminum"/>
               </Properties>
@@ -415,7 +421,7 @@
             <Component class="javax.swing.JButton" name="recyclingBTN">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="18" style="0"/>
+                  <Font name="Century Gothic" size="18" style="0"/>
                 </Property>
                 <Property name="label" type="java.lang.String" value="Submit"/>
               </Properties>
