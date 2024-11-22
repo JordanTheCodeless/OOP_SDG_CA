@@ -111,7 +111,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
 
     private void calcBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcBTNActionPerformed
         // TODO add your handling code here:
-        carbonGUI calc = new carbonGUI(); 
+        CarbonGUI calc = new CarbonGUI(); 
         calc.setVisible(true); //show
         
         this.setVisible(false); //hide this
