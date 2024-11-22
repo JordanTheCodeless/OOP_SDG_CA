@@ -20,13 +20,19 @@ public class GamePopulation {
     private ArrayList <Question> qlist;
     private File f;
     
+    //This class is used to create a file that contains the array with the Question object
+    //It is then loaded in the game manager so each question is able to be manipulated individually
+    //It uses the Singleton design to avoid erros when writting in the file multiple times
     
     
+    //Constructors
     private GamePopulation(){
         qlist = new ArrayList<>();
         f = new File("QuestionData.dat"); 
         populate();
+        //When calles, the entire code runs and populates all of the question objects automatically
     }
+    
     
     private static GamePopulation INSTANCE = new GamePopulation();
     
@@ -133,13 +139,15 @@ public class GamePopulation {
             oStream = new ObjectOutputStream(fStream);
             oStream.writeObject(qlist);
             oStream.close();
-            
             System.out.println("\nQuestions created succesfully!");
+            
+            //Added some exception handling 
         }catch(IOException e){
             System.out.println("Question Array not saved correctly");
         }
     }
-    
+       
+    //This function is for debbuging only
     public void printAll(){
         for (Question temp: qlist){
             System.out.println("\n" + temp.toString());

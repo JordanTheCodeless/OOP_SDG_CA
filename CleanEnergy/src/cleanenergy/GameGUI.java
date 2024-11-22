@@ -4,6 +4,8 @@
  */
 package cleanenergy;
 
+import java.awt.Color;
+
 /**
  *
  * @author andre
@@ -11,6 +13,7 @@ package cleanenergy;
 public class GameGUI extends javax.swing.JFrame {
     GamePopulation gpop = GamePopulation.getInstance();
     GameEngine engine;
+    int score;
     
     
         
@@ -22,13 +25,13 @@ public class GameGUI extends javax.swing.JFrame {
         inputBox.setVisible(false);
         messageArea.setVisible(false);
         scoreLBL.setVisible(false);
-        showInfo.setVisible(false);
         showQuestion.setVisible(false);
         submitBTN.setVisible(false);
         messageAreaText.setVisible(false);
         engine = new GameEngine();
+        score = engine.getScore();
         
-        
+        //Some items are hidden for a cleaner GUI
     }
 
     /**
@@ -42,7 +45,6 @@ public class GameGUI extends javax.swing.JFrame {
 
         backBTN = new javax.swing.JButton();
         showQuestion = new javax.swing.JLabel();
-        showInfo = new javax.swing.JLabel();
         inputBox = new javax.swing.JTextField();
         submitBTN = new javax.swing.JButton();
         scoreLBL = new javax.swing.JLabel();
@@ -69,9 +71,6 @@ public class GameGUI extends javax.swing.JFrame {
         showQuestion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         showQuestion.setText("Question example: What is the carbon footprint of the average adult? per year?");
 
-        showInfo.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        showInfo.setText("Your answer will be displayed here!");
-
         inputBox.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         inputBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,7 +92,6 @@ public class GameGUI extends javax.swing.JFrame {
         messageAreaText.setColumns(20);
         messageAreaText.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         messageAreaText.setRows(5);
-        messageAreaText.setText("The feedback for your answer will be displayed here");
         messageArea.setViewportView(messageAreaText);
 
         instructionsTAtext.setColumns(20);
@@ -119,35 +117,32 @@ public class GameGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 30, Short.MAX_VALUE)
                         .addComponent(showQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 583, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(57, 57, 57)
-                                .addComponent(instructionsTA, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(195, 195, 195)
-                                .addComponent(scoreLBL))
-                            .addGroup(layout.createSequentialGroup()
                                 .addGap(227, 227, 227)
                                 .addComponent(gameStartBTN))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(178, 178, 178)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(showInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(inputBox, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(submitBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(57, 57, 57)
+                                .addComponent(instructionsTA, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(173, 173, 173)
+                                .addComponent(inputBox, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(submitBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(messageArea)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(101, 101, 101)
-                .addComponent(messageArea, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(209, 209, 209)
+                .addComponent(scoreLBL)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(backBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(16, 16, 16))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,22 +151,23 @@ public class GameGUI extends javax.swing.JFrame {
                 .addComponent(instructionsTA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(showQuestion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(gameStartBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(showInfo)
+                        .addComponent(gameStartBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(inputBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(submitBTN))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(scoreLBL)
+                        .addComponent(messageArea, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(messageArea, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(backBTN))
-                .addContainerGap(13, Short.MAX_VALUE))
+                        .addComponent(scoreLBL)
+                        .addContainerGap(31, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(backBTN)
+                        .addContainerGap())))
         );
 
         pack();
@@ -182,20 +178,14 @@ public class GameGUI extends javax.swing.JFrame {
         inputBox.setVisible(true);
         messageArea.setVisible(true);
         scoreLBL.setVisible(false);
-        showInfo.setVisible(true);
         showQuestion.setVisible(true);
         submitBTN.setVisible(true);
         messageAreaText.setVisible(true);
         gameStartBTN.setVisible(false);
         instructionsTA.setVisible(false);
         instructionsTAtext.setVisible(false);
-        
-        
-        
-        
-        
-        
-        
+        messageAreaText.setText("");
+        showQuestion.setText(engine.getNextQuestion());
     }//GEN-LAST:event_gameStartBTNActionPerformed
 
     private void inputBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputBoxActionPerformed
@@ -211,16 +201,40 @@ public class GameGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_backBTNActionPerformed
 
     private void submitBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBTNActionPerformed
-//        // TODO add your handling code here:
-//        String input = .getText();
-//        try {
-//            int value = Integer.parseInt(input);
-//            feedbackLabel.setText("Valid integer: " + value);
-//            feedbackLabel.setForeground(Color.GREEN);
-//        } catch (NumberFormatException ex) {
-//            feedbackLabel.setText("Invalid input! Please enter an integer.");
-//            feedbackLabel.setForeground(Color.RED);
-//        }
+        // TODO add your handling code here:
+        String input = inputBox.getText();
+        
+        //When an answer is submitted, it tries to parse it to an int
+        //otherwise it returns an error message and does not proceeds to the next level.
+        try {
+            int value = Integer.parseInt(input);
+            String feedBack = engine.submitAnswer(value);
+            if(score != engine.getScore()){
+                
+                messageArea.setBackground(Color.green);
+                score++;
+            }else{
+                messageArea.setBackground(Color.red);
+            }
+            messageAreaText.setText(feedBack);
+            
+            //To do whenever the game has been finished
+            if(engine.isQuizOver()){
+                inputBox.setVisible(false);
+                scoreLBL.setVisible(true);
+                showQuestion.setVisible(true);
+                submitBTN.setVisible(false);
+                scoreLBL.setText("Your final score was: "+ engine.getScore());
+                
+                //Implement highScore stuff here
+            }
+            showQuestion.setText(engine.getNextQuestion());
+            
+        } catch (NumberFormatException ex) {
+            messageAreaText.setText("Invalid input! Please enter an integer.");
+        }
+        
+        
     }//GEN-LAST:event_submitBTNActionPerformed
 
     /**
@@ -269,7 +283,6 @@ public class GameGUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane messageArea;
     private javax.swing.JTextArea messageAreaText;
     private javax.swing.JLabel scoreLBL;
-    private javax.swing.JLabel showInfo;
     private javax.swing.JLabel showQuestion;
     private javax.swing.JButton submitBTN;
     // End of variables declaration//GEN-END:variables

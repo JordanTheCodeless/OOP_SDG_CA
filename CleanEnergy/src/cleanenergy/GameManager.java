@@ -19,16 +19,21 @@ public class GameManager {
     private int grade;
     
 
-
+    //Constructor
     public GameManager() {
         questions = new ArrayList<>();
         loadQuestions();
-
+        //The game manager automatically retrieves the questions array
     }
     
     public void loadQuestions(){
         FileInputStream fStream;
         ObjectInputStream oStream;
+        
+
+        //This method opens the QuestionData.dat file, and assigns the value to
+        //an array of objects called question, it allso has exception handling
+        
         
         try{
             fStream = new FileInputStream("QuestionData.dat");
@@ -42,10 +47,13 @@ public class GameManager {
         }
     }
     
+    //Setters
     public void setGrade(int score) {
         this.grade = score;
     }
     
+    
+    //Compute methods
     public void computeGrade() {
         if (grade >= 8) {
             message = "Excellent! You scored " + grade + " out of 10.";
@@ -56,7 +64,8 @@ public class GameManager {
         }
     }
     
-        public String getMessage() {
+    //Getters
+    public String getMessage() {
         return message;
     }
 
