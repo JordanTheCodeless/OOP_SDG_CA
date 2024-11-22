@@ -4,11 +4,13 @@
  */
 package cleanenergy;
 
+import java.io.Serializable;
+
 /**
  *
  * @author andre
  */
-public class Question {
+public class Question implements Serializable{
     private String questionText;
     private int correctAnswer;
     private String correctMessage;
@@ -22,7 +24,8 @@ public class Question {
     }
 
     public boolean computeInfo(int answer) {
-        return answer == correctAnswer;
+        return (answer < correctAnswer+50 && answer > correctAnswer-50);
+        //Set a small range where the user can be wrong to make the game a little easier
     }
 
     public String getFeedback(boolean result) {
@@ -36,4 +39,11 @@ public class Question {
     public String getQuestionText() {
         return questionText;
     }
+
+    @Override
+    public String toString() {
+        return "Question{" + "questionText=" + questionText + ", correctAnswer=" + correctAnswer + ", correctMessage=" + correctMessage + ", incorrectMessage=" + incorrectMessage + '}';
+    }
+    
+    
 }

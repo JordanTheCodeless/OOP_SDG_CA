@@ -4,9 +4,6 @@
  */
 package cleanenergy;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 /**
  *
  * @author andre
@@ -21,8 +18,6 @@ public class GameEngine {
         score = 0;
         manager = new GameManager();
     }
-
-
 
     public String startGame() {
         return getNextQuestion();
@@ -39,14 +34,13 @@ public class GameEngine {
     }
 
     public boolean isQuizOver() {
-        return currentIndex >= 10;
-        //Aqui poner mas o menos hardcoded de lka cantidad de preguntas despues
+        return currentIndex >= manager.getSize();
     }
 
     public String getNextQuestion() {
         if (isQuizOver()) {
             manager.setGrade(score);
-            manager.computeGrade(score);
+            manager.computeGrade();
             return manager.getMessage();
         }
         return manager.getQuestion(currentIndex).getQuestionText();
