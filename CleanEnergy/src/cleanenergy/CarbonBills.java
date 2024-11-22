@@ -4,50 +4,55 @@
  */
 package cleanenergy;
 
+import cleanenergy.CarbonFootPrint;
+
 /**
  *
  * @author jordancarthy
  */
-public class CarbonBills extends CarbonFootprint{
+public class CarbonBills extends CarbonFootPrint {
     private double electricBill;
     private double gasBill;
     private double oilBill;
+    private double billsTotal[];
 
-    public CarbonBills(double electricBill, double gasBill, double oilBill, double carbonFootTotal) {
-        super(carbonFootTotal);
+    public CarbonBills(String type, double value,double electricBill, double gasBill, double oilBill ) {
+        super(type, value);
         this.electricBill = electricBill;
         this.gasBill = gasBill;
         this.oilBill = oilBill;
+        billsTotal = new double[] {electricBill,gasBill,oilBill};
     }
 
-    public double getElectricBill() {
+    public double getElectricalBill() {
         return electricBill;
+    }
+
+    public void setElectricalBill(double electricBill) {
+        this.electricBill = electricBill;
     }
 
     public double getGasBill() {
         return gasBill;
     }
 
+    public void setGasBill(double gasBill) {
+        this.gasBill = gasBill;
+    }
+
     public double getOilBill() {
         return oilBill;
     }
-    @Override
-    public double carbonFootCalc(){
-        return carbonFootTotal += ((electricBill * 105)+ (gasBill * 105) + (oilBill*103));
+
+    public void setOilBill(double oilBill) {
+        this.oilBill = oilBill;
     }
-
-    
-
+    @Override
+    public double computeCarbonFoot(){
+        return value = ((billsTotal[0] * 105)+ (billsTotal[1] * 105) + (billsTotal[2]*103));
+    }
+    public String toString(){
+        return super.toString() ;
+    }
     
 }
-
-
-//    Multiply your monthly electric bill by 105
-//    Multiply your monthly gas bill by 105
-//    Multiply your monthly oil bill by 113
-//    Multiply your total yearly mileage on your car by .79
-//    Multiply the number of flights you’ve taken in the past year (4 hours or less) by 1,100
-//    Multiply the number of flights you’ve taken in the past year (4 hours or more) by 4,400
-//    Add 184 if you do NOT recycle newspaper
-//    Add 166 if you do NOT recycle aluminum and tin
-//    Add 1-8 together for your total carbon footprint
