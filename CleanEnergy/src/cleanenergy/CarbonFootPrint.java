@@ -28,7 +28,7 @@ public abstract class CarbonFootPrint implements Serializable {
         return type;
     }
 
-    public void setUserName(String type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -44,6 +44,6 @@ public abstract class CarbonFootPrint implements Serializable {
     
 //    This will be the standard toString method for all subclasses 
     public String toString(){
-        return "Type of CarbonFootPrint " + type + "\nCarbonFoot Total :" + value;
+        return "CarbonFootPrint type : " + type + "\nCarbonFoot Total : " + value;
     }
 }
