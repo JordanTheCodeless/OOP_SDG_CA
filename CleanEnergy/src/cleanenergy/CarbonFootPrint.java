@@ -10,10 +10,11 @@ import java.io.Serializable;
  *
  * @author jordancarthy
  */
+// Making my parent class abstract and implememnting Serializable
 public abstract class CarbonFootPrint implements Serializable {
     protected String type;
     protected double value;
-
+// Constructor
     public CarbonFootPrint(String type, double value) {
         this.type = type;
         this.value = value;
@@ -38,10 +39,10 @@ public abstract class CarbonFootPrint implements Serializable {
     public void setCarbonFootTotal(double value) {
         this.value = value;
     }
-
+//    Abstract method ensuring all classes that extend will use
     public abstract double computeCarbonFoot();
     
-    
+//    This will be the standard toString method for all subclasses 
     public String toString(){
         return "Type of CarbonFootPrint " + type + "\nCarbonFoot Total :" + value;
     }
