@@ -11,12 +11,12 @@ import cleanenergy.CarbonFootPrint;
  * @author jordancarthy
  */
 
-    public class CarbonTransport extends CarbonFootPrint {
+   public class CarbonTransport extends CarbonFootPrint {
    private double flightLessFour;
    private double flightMoreFour;
    private double carYearlyMileage;
    private double transports[];
-   
+//   Overloaded Constructor 
      public CarbonTransport(String type, double value, double flightLessFour, double flightMoreFour, double carYearlyMileage) {
         super(type, value);
         this.flightLessFour = flightLessFour;
@@ -52,9 +52,12 @@ import cleanenergy.CarbonFootPrint;
         this.carYearlyMileage = carYearlyMileage;
     }
 
+   @Override
+   // Abstract method
     public double computeCarbonFoot(){
         return value = ((transports[0] * 0.79) + (transports[1] * 1100) + (transports[2] * 4400));
     }
+   @Override
     public String toString(){
         return super.toString();
     }

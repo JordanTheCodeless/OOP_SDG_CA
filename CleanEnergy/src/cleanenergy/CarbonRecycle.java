@@ -14,6 +14,7 @@ public class CarbonRecycle extends CarbonFootPrint {
     // Final variables for aluminum and newspaper carbon footprints
     private final int ALUMINIUM = 166;
     private final int NEWSPAPER = 184;
+//    Reasons for boolean are to access the checkboxes inside the GUI and to return the FINAL variables inside my compute method
     private boolean aluminiumRecycled;
     private boolean newspaperRecycled;
 
