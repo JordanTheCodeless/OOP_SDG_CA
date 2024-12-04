@@ -60,28 +60,28 @@ public class CarbonGUI extends javax.swing.JFrame {
         recyclePane = new javax.swing.JPanel();
         aluminumCB = new javax.swing.JCheckBox();
         newspaperCB = new javax.swing.JCheckBox();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        billsPane = new javax.swing.JLayeredPane();
-        oilTF = new javax.swing.JTextField();
-        gasBIllLBL = new javax.swing.JLabel();
-        gasTF = new javax.swing.JTextField();
-        electricTF = new javax.swing.JTextField();
-        oilBillLBL = new javax.swing.JLabel();
-        electricBillLBL = new javax.swing.JLabel();
-        transportPane = new javax.swing.JLayeredPane();
-        flightsLessLBL = new javax.swing.JLabel();
-        flightsMoreLBL = new javax.swing.JLabel();
-        carYearlyLBL = new javax.swing.JLabel();
-        carYearlyTF = new javax.swing.JTextField();
-        flightsLessTF = new javax.swing.JTextField();
-        flightsMoreTF = new javax.swing.JTextField();
+        aluminiumLBL = new javax.swing.JLabel();
+        newspaperLBL = new javax.swing.JLabel();
+        recyclingTitleLBL = new javax.swing.JLabel();
+        recyclingTitleLBLTwo = new javax.swing.JLabel();
         introPane = new javax.swing.JPanel();
         introFirstTextLBL = new javax.swing.JLabel();
         introSecondTextLBL = new javax.swing.JLabel();
         introThirdTextLBL = new javax.swing.JLabel();
+        billsPane = new javax.swing.JPanel();
+        electricBillLBL = new javax.swing.JLabel();
+        gasBIllLBL = new javax.swing.JLabel();
+        oilBillLBL = new javax.swing.JLabel();
+        electricTF = new javax.swing.JTextField();
+        gasTF = new javax.swing.JTextField();
+        oilTF = new javax.swing.JTextField();
+        transportPane = new javax.swing.JPanel();
+        flightsLessLBL = new javax.swing.JLabel();
+        flightsMoreTF = new javax.swing.JTextField();
+        flightsLessTF = new javax.swing.JTextField();
+        carYearlyTF = new javax.swing.JTextField();
+        carYearlyLBL = new javax.swing.JLabel();
+        flightsMoreLBL = new javax.swing.JLabel();
         errorLBL = new javax.swing.JLabel();
         displayPanel = new javax.swing.JPanel();
         loadBTN = new javax.swing.JButton();
@@ -92,6 +92,7 @@ public class CarbonGUI extends javax.swing.JFrame {
         displayBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(186, 204, 65));
         setPreferredSize(new java.awt.Dimension(691, 360));
         setResizable(false);
         setSize(new java.awt.Dimension(691, 360));
@@ -101,7 +102,7 @@ public class CarbonGUI extends javax.swing.JFrame {
         getContentPane().add(hiddenTabPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, -20, 44, 270));
 
         carbonButtonGroup.add(billsRB);
-        billsRB.setFont(new java.awt.Font("American Typewriter", 0, 14)); // NOI18N
+        billsRB.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
         billsRB.setText("Bills");
         billsRB.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -113,27 +114,27 @@ public class CarbonGUI extends javax.swing.JFrame {
                 billsRBActionPerformed(evt);
             }
         });
-        getContentPane().add(billsRB, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, 20));
+        getContentPane().add(billsRB, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 90, 20));
 
         carbonButtonGroup.add(transportRB);
-        transportRB.setFont(new java.awt.Font("American Typewriter", 0, 14)); // NOI18N
+        transportRB.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
         transportRB.setText("Transport");
         transportRB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 transportRBActionPerformed(evt);
             }
         });
-        getContentPane().add(transportRB, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, -1, 20));
+        getContentPane().add(transportRB, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 140, 20));
 
         carbonButtonGroup.add(recyclingRB);
-        recyclingRB.setFont(new java.awt.Font("American Typewriter", 0, 14)); // NOI18N
+        recyclingRB.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
         recyclingRB.setText("Recycling");
         recyclingRB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 recyclingRBActionPerformed(evt);
             }
         });
-        getContentPane().add(recyclingRB, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 100, 20));
+        getContentPane().add(recyclingRB, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 150, 20));
 
         carbonTabPane.setBackground(new java.awt.Color(65, 65, 65));
         carbonTabPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
@@ -141,12 +142,13 @@ public class CarbonGUI extends javax.swing.JFrame {
         recyclePane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         aluminumCB.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        aluminumCB.setPreferredSize(new java.awt.Dimension(24, 24));
         aluminumCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aluminumCBActionPerformed(evt);
             }
         });
-        recyclePane.add(aluminumCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, -1, -1));
+        recyclePane.add(aluminumCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, 40, 20));
 
         newspaperCB.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         newspaperCB.addActionListener(new java.awt.event.ActionListener() {
@@ -154,107 +156,25 @@ public class CarbonGUI extends javax.swing.JFrame {
                 newspaperCBActionPerformed(evt);
             }
         });
-        recyclePane.add(newspaperCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, -1, -1));
+        recyclePane.add(newspaperCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("American Typewriter", 1, 14)); // NOI18N
-        jLabel1.setText("Aluminum");
-        recyclePane.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, -1, -1));
+        aluminiumLBL.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
+        aluminiumLBL.setText("Aluminium : ");
+        recyclePane.add(aluminiumLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 120, -1));
 
-        jLabel2.setFont(new java.awt.Font("American Typewriter", 1, 14)); // NOI18N
-        jLabel2.setText("Newspaper");
-        recyclePane.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, -1, -1));
+        newspaperLBL.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
+        newspaperLBL.setText("Newspaper :");
+        recyclePane.add(newspaperLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("American Typewriter", 0, 14)); // NOI18N
-        jLabel3.setText("Please Tick The Following Boxes ");
-        recyclePane.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 260, 20));
+        recyclingTitleLBL.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
+        recyclingTitleLBL.setText("Please Tick The Following Boxes ");
+        recyclePane.add(recyclingTitleLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 340, 20));
 
-        jLabel4.setFont(new java.awt.Font("American Typewriter", 0, 14)); // NOI18N
-        jLabel4.setText("If you Recycle These Materials :");
-        recyclePane.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 230, -1));
+        recyclingTitleLBLTwo.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
+        recyclingTitleLBLTwo.setText("If you Recycle These Materials :");
+        recyclePane.add(recyclingTitleLBLTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 310, -1));
 
         carbonTabPane.addTab("recycleTab", recyclePane);
-
-        billsPane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        billsPane.add(oilTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 89, -1));
-
-        gasBIllLBL.setFont(new java.awt.Font("American Typewriter", 0, 14)); // NOI18N
-        gasBIllLBL.setText("Gas Bill :");
-        billsPane.add(gasBIllLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 70, -1));
-        billsPane.add(gasTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 88, -1));
-
-        electricTF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                electricTFActionPerformed(evt);
-            }
-        });
-        billsPane.add(electricTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 88, -1));
-
-        oilBillLBL.setFont(new java.awt.Font("American Typewriter", 0, 14)); // NOI18N
-        oilBillLBL.setText("Oil bill :");
-        billsPane.add(oilBillLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 60, -1));
-
-        electricBillLBL.setFont(new java.awt.Font("American Typewriter", 0, 14)); // NOI18N
-        electricBillLBL.setText("Electric bill");
-        billsPane.add(electricBillLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 90, -1));
-
-        carbonTabPane.addTab("billsTab", billsPane);
-
-        transportPane.setFont(new java.awt.Font("American Typewriter", 0, 12)); // NOI18N
-
-        flightsLessLBL.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
-        flightsLessLBL.setText("Flights that were four hours or more :");
-
-        flightsMoreLBL.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
-        flightsMoreLBL.setText("Flights that were less than four hours :");
-
-        carYearlyLBL.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
-        carYearlyLBL.setText("Your cars yearly mileage :");
-
-        transportPane.setLayer(flightsLessLBL, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        transportPane.setLayer(flightsMoreLBL, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        transportPane.setLayer(carYearlyLBL, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        transportPane.setLayer(carYearlyTF, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        transportPane.setLayer(flightsLessTF, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        transportPane.setLayer(flightsMoreTF, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout transportPaneLayout = new javax.swing.GroupLayout(transportPane);
-        transportPane.setLayout(transportPaneLayout);
-        transportPaneLayout.setHorizontalGroup(
-            transportPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, transportPaneLayout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
-                .addGroup(transportPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(flightsMoreLBL)
-                    .addComponent(flightsLessLBL)
-                    .addComponent(carYearlyLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addGroup(transportPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(flightsMoreTF)
-                    .addComponent(flightsLessTF)
-                    .addComponent(carYearlyTF, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38))
-        );
-        transportPaneLayout.setVerticalGroup(
-            transportPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(transportPaneLayout.createSequentialGroup()
-                .addGroup(transportPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(transportPaneLayout.createSequentialGroup()
-                        .addComponent(flightsLessLBL)
-                        .addGap(18, 18, 18)
-                        .addComponent(flightsMoreLBL))
-                    .addGroup(transportPaneLayout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(flightsMoreTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(flightsLessTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(12, 12, 12)
-                .addGroup(transportPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(carYearlyLBL)
-                    .addComponent(carYearlyTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34))
-        );
-
-        carbonTabPane.addTab("transportTab", transportPane);
 
         introFirstTextLBL.setFont(new java.awt.Font("Charter", 0, 18)); // NOI18N
         introFirstTextLBL.setText("This is the Carbon Footprint Calculator");
@@ -270,7 +190,7 @@ public class CarbonGUI extends javax.swing.JFrame {
         introPaneLayout.setHorizontalGroup(
             introPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(introPaneLayout.createSequentialGroup()
-                .addContainerGap(70, Short.MAX_VALUE)
+                .addContainerGap(79, Short.MAX_VALUE)
                 .addGroup(introPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, introPaneLayout.createSequentialGroup()
                         .addGroup(introPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -295,10 +215,115 @@ public class CarbonGUI extends javax.swing.JFrame {
 
         carbonTabPane.addTab("tab4", introPane);
 
+        electricBillLBL.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
+        electricBillLBL.setText("Electric bill :");
+
+        gasBIllLBL.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
+        gasBIllLBL.setText("Gas Bill :");
+
+        oilBillLBL.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
+        oilBillLBL.setText("Oil bill :");
+
+        electricTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                electricTFActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout billsPaneLayout = new javax.swing.GroupLayout(billsPane);
+        billsPane.setLayout(billsPaneLayout);
+        billsPaneLayout.setHorizontalGroup(
+            billsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(billsPaneLayout.createSequentialGroup()
+                .addGap(114, 114, 114)
+                .addGroup(billsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(gasBIllLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(electricBillLBL)
+                    .addComponent(oilBillLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(62, 62, 62)
+                .addGroup(billsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(gasTF, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(electricTF, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(oilTF, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(148, Short.MAX_VALUE))
+        );
+        billsPaneLayout.setVerticalGroup(
+            billsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(billsPaneLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(billsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(electricTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(electricBillLBL))
+                .addGap(18, 18, 18)
+                .addGroup(billsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(gasBIllLBL)
+                    .addComponent(gasTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(billsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(oilBillLBL)
+                    .addComponent(oilTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+
+        carbonTabPane.addTab("tab4", billsPane);
+
+        flightsLessLBL.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
+        flightsLessLBL.setText("Flights that were four hours or more :");
+
+        carYearlyLBL.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
+        carYearlyLBL.setText("Your cars yearly mileage :");
+
+        flightsMoreLBL.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
+        flightsMoreLBL.setText("Flights that were less than four hours :");
+
+        javax.swing.GroupLayout transportPaneLayout = new javax.swing.GroupLayout(transportPane);
+        transportPane.setLayout(transportPaneLayout);
+        transportPaneLayout.setHorizontalGroup(
+            transportPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, transportPaneLayout.createSequentialGroup()
+                .addGap(87, 87, 87)
+                .addGroup(transportPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(transportPaneLayout.createSequentialGroup()
+                        .addComponent(carYearlyLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(carYearlyTF, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(transportPaneLayout.createSequentialGroup()
+                        .addGroup(transportPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(flightsMoreLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(flightsLessLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(transportPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(flightsMoreTF, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(flightsLessTF, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(103, 103, 103))
+        );
+        transportPaneLayout.setVerticalGroup(
+            transportPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(transportPaneLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(transportPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(flightsLessLBL)
+                    .addComponent(flightsMoreTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(transportPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(flightsMoreLBL)
+                    .addComponent(flightsLessTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(transportPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(carYearlyLBL)
+                    .addComponent(carYearlyTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
+
+        carbonTabPane.addTab("tab4", transportPane);
+
         getContentPane().add(carbonTabPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(-100, 70, 670, 150));
 
+        errorLBL.setBackground(new java.awt.Color(204, 0, 0));
+        errorLBL.setForeground(new java.awt.Color(153, 0, 0));
         errorLBL.setText("PLEASE ENTER A NUMBER !!!!");
-        getContentPane().add(errorLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, 210, -1));
+        getContentPane().add(errorLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 210, 20));
 
         loadBTN.setFont(new java.awt.Font("American Typewriter", 0, 13)); // NOI18N
         loadBTN.setText("Load");
@@ -586,8 +611,9 @@ public class CarbonGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBTN;
+    private javax.swing.JLabel aluminiumLBL;
     private javax.swing.JCheckBox aluminumCB;
-    private javax.swing.JLayeredPane billsPane;
+    private javax.swing.JPanel billsPane;
     private javax.swing.JRadioButton billsRB;
     private javax.swing.JLabel carYearlyLBL;
     private javax.swing.JTextField carYearlyTF;
@@ -610,19 +636,18 @@ public class CarbonGUI extends javax.swing.JFrame {
     private javax.swing.JPanel introPane;
     private javax.swing.JLabel introSecondTextLBL;
     private javax.swing.JLabel introThirdTextLBL;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton loadBTN;
     private javax.swing.JCheckBox newspaperCB;
+    private javax.swing.JLabel newspaperLBL;
     private javax.swing.JLabel oilBillLBL;
     private javax.swing.JTextField oilTF;
     private javax.swing.JPanel recyclePane;
     private javax.swing.JRadioButton recyclingRB;
+    private javax.swing.JLabel recyclingTitleLBL;
+    private javax.swing.JLabel recyclingTitleLBLTwo;
     private javax.swing.JButton saveBTN;
-    private javax.swing.JLayeredPane transportPane;
+    private javax.swing.JPanel transportPane;
     private javax.swing.JRadioButton transportRB;
     // End of variables declaration//GEN-END:variables
 }
