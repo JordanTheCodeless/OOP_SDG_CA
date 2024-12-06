@@ -15,6 +15,10 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
      */
     public CleanEnergyGUI() {
         initComponents();
+        mainGuiScrollP.getViewport().setOpaque(false);
+        //https://stackoverflow.com/questions/30435186/how-to-make-jtextarea-transparent-background 
+        mainGuiIntroTA.setText(" Empower your journey to sustainability with our Clean Energy app—featuring a carbon calculator, interactive game, and educational quiz!");
+     
     }
 
     /**
@@ -26,34 +30,59 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        calcBTN = new javax.swing.JButton();
-        gameBTN = new javax.swing.JButton();
+        mainGuiBTNGroup = new javax.swing.ButtonGroup();
+        javax.swing.JButton calcBTN = new javax.swing.JButton();
+        javax.swing.JButton gameBTN = new javax.swing.JButton();
         quizBTN = new javax.swing.JButton();
         exitMainBTN = new javax.swing.JButton();
         mainTitleLBL = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        mainGuiScrollP = new javax.swing.JScrollPane();
+        mainGuiIntroTA = new javax.swing.JTextArea();
+        backgroundIMGLBL = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 204, 51));
+        setForeground(new java.awt.Color(255, 204, 51));
+        setMinimumSize(new java.awt.Dimension(609, 374));
+        setPreferredSize(new java.awt.Dimension(609, 374));
+        getContentPane().setLayout(null);
 
-        calcBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cleanenergy/calculator icon white background.jpg"))); // NOI18N
+        calcBTN.setBackground(new java.awt.Color(57, 39, 56, 20));
+        calcBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cleanenergy/calcImage.png"))); // NOI18N
+        calcBTN.setBorderPainted(false);
+        mainGuiBTNGroup.add(calcBTN);
         calcBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 calcBTNActionPerformed(evt);
             }
         });
+        getContentPane().add(calcBTN);
+        calcBTN.setBounds(70, 190, 90, 100);
 
-        gameBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cleanenergy/controller icon white background.jpg"))); // NOI18N
+        gameBTN.setBackground(new java.awt.Color(57, 39, 56, 20));
+        gameBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cleanenergy/gameImage.png"))); // NOI18N
+        gameBTN.setBorderPainted(false);
+        mainGuiBTNGroup.add(gameBTN);
         gameBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gameBTNActionPerformed(evt);
             }
         });
+        getContentPane().add(gameBTN);
+        gameBTN.setBounds(230, 190, 110, 100);
 
-        quizBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cleanenergy/question mark white background.jpg"))); // NOI18N
+        quizBTN.setBackground(new java.awt.Color(57, 39, 56, 20));
+        quizBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cleanenergy/quizImage.png"))); // NOI18N
+        quizBTN.setBorderPainted(false);
+        mainGuiBTNGroup.add(quizBTN);
         quizBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quizBTNActionPerformed(evt);
             }
         });
+        getContentPane().add(quizBTN);
+        quizBTN.setBounds(400, 190, 110, 100);
 
         exitMainBTN.setBackground(new java.awt.Color(255, 51, 51));
         exitMainBTN.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
@@ -64,47 +93,48 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
                 exitMainBTNActionPerformed(evt);
             }
         });
+        getContentPane().add(exitMainBTN);
+        exitMainBTN.setBounds(10, 320, 84, 23);
 
-        mainTitleLBL.setFont(new java.awt.Font("Chalkboard", 1, 36)); // NOI18N
+        mainTitleLBL.setBackground(new java.awt.Color(255, 255, 255));
+        mainTitleLBL.setFont(new java.awt.Font("Lucida Grande", 3, 36)); // NOI18N
+        mainTitleLBL.setForeground(new java.awt.Color(255, 255, 255));
         mainTitleLBL.setText("Clean Energy");
+        getContentPane().add(mainTitleLBL);
+        mainTitleLBL.setBounds(170, 20, 300, 43);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(exitMainBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(251, 251, 251))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(calcBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(gameBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                        .addComponent(quizBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(mainTitleLBL)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addComponent(mainTitleLBL)
-                .addGap(54, 54, 54)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(quizBTN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(gameBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(calcBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                .addComponent(exitMainBTN)
-                .addGap(43, 43, 43))
-        );
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("This is our CleanEnergyApp,\n We hope to fuel future generations and current generations,\nBy providing a fun and engaging way of learning about how we can make a cleaner future ! ");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(140, 80, 0, 10);
+
+        mainGuiScrollP.setBackground(new java.awt.Color(255, 255, 255, 20));
+        mainGuiScrollP.setBorder(null);
+        mainGuiScrollP.setForeground(new java.awt.Color(255, 255, 255, 20));
+        mainGuiScrollP.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        mainGuiScrollP.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        mainGuiScrollP.setOpaque(false);
+
+        mainGuiIntroTA.setEditable(false);
+        mainGuiIntroTA.setBackground(new java.awt.Color(57, 39, 56, 20));
+        mainGuiIntroTA.setColumns(20);
+        mainGuiIntroTA.setFont(new java.awt.Font("Gujarati Sangam MN", 0, 12)); // NOI18N
+        mainGuiIntroTA.setForeground(new java.awt.Color(255, 255, 255));
+        mainGuiIntroTA.setLineWrap(true);
+        mainGuiIntroTA.setRows(5);
+        mainGuiIntroTA.setWrapStyleWord(true);
+        mainGuiIntroTA.setAutoscrolls(false);
+        mainGuiIntroTA.setBorder(null);
+        mainGuiIntroTA.setOpaque(false);
+        mainGuiScrollP.setViewportView(mainGuiIntroTA);
+
+        getContentPane().add(mainGuiScrollP);
+        mainGuiScrollP.setBounds(170, 70, 260, 120);
+
+        backgroundIMGLBL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cleanenergy/sunrise-7674594_640.jpg"))); // NOI18N
+        getContentPane().add(backgroundIMGLBL);
+        backgroundIMGLBL.setBounds(0, 0, 650, 360);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -113,6 +143,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         CarbonGUI calc = new CarbonGUI(); 
         calc.setVisible(true); //show
+        calc.setOpacity(1);
         
         this.setVisible(false); //hide this
         System.out.println("closed"); //testing line
@@ -181,9 +212,12 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton calcBTN;
+    private javax.swing.JLabel backgroundIMGLBL;
     private javax.swing.JButton exitMainBTN;
-    private javax.swing.JButton gameBTN;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.ButtonGroup mainGuiBTNGroup;
+    private javax.swing.JTextArea mainGuiIntroTA;
+    private javax.swing.JScrollPane mainGuiScrollP;
     private javax.swing.JLabel mainTitleLBL;
     private javax.swing.JButton quizBTN;
     // End of variables declaration//GEN-END:variables

@@ -80,6 +80,7 @@ public class QuizGUI extends javax.swing.JFrame {
         submitBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(609, 374));
         setResizable(false);
 
         titlLBL.setBackground(new java.awt.Color(204, 204, 204));
