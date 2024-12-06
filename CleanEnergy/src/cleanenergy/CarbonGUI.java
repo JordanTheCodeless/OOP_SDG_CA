@@ -20,8 +20,9 @@ import java.util.ArrayList;
  * @author jordancarthy
  */
 public class CarbonGUI extends javax.swing.JFrame {
+    ArrayList usersList;
 // declare my variables
-    ArrayList<CarbonFootPrint> footPrints;
+        ArrayList<CarbonFootPrint> footPrints;
     double value;
     double electricBill;
     double gasBill;
@@ -29,11 +30,13 @@ public class CarbonGUI extends javax.swing.JFrame {
     double flightLessFour;
     double flightMoreFour;
     double carYearlyMileage;
-
+    String name  = "Jordan";
     /**
      * Creates new form CarbonFootCalc
      */
     public CarbonGUI() {
+        usersList = new ArrayList<>();
+        
         initComponents();
         footPrints = new ArrayList<>();
         errorLBL.setVisible(false);
@@ -401,6 +404,14 @@ public class CarbonGUI extends javax.swing.JFrame {
     public void showDisplay(){
         displayPanel.setVisible(true);
     }
+   
+      
+//   public boolean isObjAlreadyInList() {
+//    for(CarbonFootPrint obj : this.footPrints)
+//        if(obj instanceof CarbonFootPrint)
+//            return true;
+//    return false;
+//}
     
     
     private void electricTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_electricTFActionPerformed
@@ -410,6 +421,7 @@ public class CarbonGUI extends javax.swing.JFrame {
 
     private void addBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTNActionPerformed
         // TODO add your handling code here:
+        
         double totalValue;
         try{
         if (billsRB.isSelected()) {
@@ -421,9 +433,8 @@ public class CarbonGUI extends javax.swing.JFrame {
             
             carbonBills.computeCarbonFoot();
             footPrints.add(carbonBills);
-            displayTA.append("\n Monthly bills Added");
+            displayTA.append("\nMonthly Bills Added");
             errorLBL.setVisible(false);
-            
             clearFields();
         } 
         if (recyclingRB.isSelected()) {  // addBTN logic for recycling radio button or equivalent
@@ -459,7 +470,9 @@ public class CarbonGUI extends javax.swing.JFrame {
             clearFields();
             
         }
-        } catch(NumberFormatException e){
+        } 
+        
+        catch(NumberFormatException e){
             System.out.println("Error : " + e);
             errorLBL.setVisible(true);
             clearFields();
@@ -479,6 +492,8 @@ public class CarbonGUI extends javax.swing.JFrame {
             oStream.writeObject(footPrints);
             oStream.close();
             displayTA.append("\nSuccesfully saved file");
+            footPrints.clear();
+            System.out.println(footPrints);
         } catch (IOException e) {
             System.out.println("I/O e :" + e);
         }
@@ -508,7 +523,7 @@ public class CarbonGUI extends javax.swing.JFrame {
         flightsMoreTF.setText("");
         carYearlyTF.setText("");
         newspaperCB.setSelected(false);
-         aluminumCB.setSelected(false);
+        aluminumCB.setSelected(false);
          
     }
     private void loadBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadBTNActionPerformed
@@ -517,6 +532,7 @@ public class CarbonGUI extends javax.swing.JFrame {
         displayTA.append("\nData loaded successfully.\n");
         for (CarbonFootPrint footPrint : footPrints) {
             displayTA.append(footPrint.toString() + "\n");
+            
         }
     
     }//GEN-LAST:event_loadBTNActionPerformed
