@@ -1,5 +1,10 @@
 package cleanenergy;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.ArrayList;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -10,12 +15,40 @@ package cleanenergy;
  * @author Greg
  */
 public class QuizGUI extends javax.swing.JFrame {
-
+    UnifieQuiz uQuiz = new UnifieQuiz();
+    int currentQindex;
+    int score;
+    
     /**
      * Creates new form QuizGUI
      */
     public QuizGUI() {
         initComponents();
+        currentQindex = 0;
+        score = 0;
+        loadQ();// loads the initial question, and choices with it.
+    }
+    
+    private void loadQ(){
+        if (currentQindex < uQuiz.getNumQ()){//compares the current index int with the total size of the amount of questions, and displays the next question using the index int
+            questionTA.setText(uQuiz.getQ(currentQindex));
+            ArrayList<String> choices = uQuiz.getCh(currentQindex);
+            
+            answer1RBTN.setText(choices.get(0));
+            answer2RBTN.setText(choices.get(1));
+            answer3RBTN.setText(choices.get(2));
+            buttonGroup1.clearSelection();
+        }
+    }
+    private void subReview(){
+        String rev = reviewTF.getText();// since the filewriter is only used in the reviews and disp i will leave it in this method and one more to be used in the review submission and view
+        try(FileWriter writer = new FileWriter("reviews.dat")){ //simple method to save reviews to a file 
+            writer.write("user review:" + rev);
+            writer.write("\n");
+            errorTA.setText("file added and saved in reveiws.dat file");
+        } catch(Exception e){
+            errorTA.setText("error"+ e.getMessage());
+        }
     }
 
     /**
@@ -27,19 +60,24 @@ public class QuizGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         titlLBL = new javax.swing.JLabel();
         exitBTN = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        questioTA = new javax.swing.JTextArea();
+        questionTA = new javax.swing.JTextArea();
         instuctionLBL = new javax.swing.JLabel();
         nextBTN = new javax.swing.JButton();
         scoreLBL = new javax.swing.JLabel();
         startBTN = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        factTA = new javax.swing.JTextArea();
+        errorTA = new javax.swing.JTextArea();
         answer1RBTN = new javax.swing.JRadioButton();
         answer2RBTN = new javax.swing.JRadioButton();
         answer3RBTN = new javax.swing.JRadioButton();
+        scoreTF = new javax.swing.JTextField();
+        reviewTF = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        submitBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -58,11 +96,11 @@ public class QuizGUI extends javax.swing.JFrame {
             }
         });
 
-        questioTA.setColumns(20);
-        questioTA.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        questioTA.setRows(5);
-        questioTA.setText("QUESTIONS WILL BE DISPLAYED HERE");
-        jScrollPane1.setViewportView(questioTA);
+        questionTA.setColumns(20);
+        questionTA.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        questionTA.setRows(5);
+        questionTA.setText("QUESTIONS WILL BE DISPLAYED HERE");
+        jScrollPane1.setViewportView(questionTA);
 
         instuctionLBL.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         instuctionLBL.setText("Select one of the three buttons");
@@ -70,6 +108,11 @@ public class QuizGUI extends javax.swing.JFrame {
         nextBTN.setBackground(new java.awt.Color(51, 255, 51));
         nextBTN.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         nextBTN.setText("Next");
+        nextBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nextBTNActionPerformed(evt);
+            }
+        });
 
         scoreLBL.setBackground(new java.awt.Color(204, 204, 204));
         scoreLBL.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -84,12 +127,12 @@ public class QuizGUI extends javax.swing.JFrame {
             }
         });
 
-        factTA.setColumns(20);
-        factTA.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        factTA.setRows(5);
-        factTA.setText("QUESTION FACT\n");
-        jScrollPane2.setViewportView(factTA);
+        errorTA.setColumns(20);
+        errorTA.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        errorTA.setRows(5);
+        jScrollPane2.setViewportView(errorTA);
 
+        buttonGroup1.add(answer1RBTN);
         answer1RBTN.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         answer1RBTN.setText("1");
         answer1RBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -98,6 +141,7 @@ public class QuizGUI extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(answer2RBTN);
         answer2RBTN.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         answer2RBTN.setText("2");
         answer2RBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -106,8 +150,35 @@ public class QuizGUI extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(answer3RBTN);
         answer3RBTN.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         answer3RBTN.setText("3");
+        answer3RBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                answer3RBTNActionPerformed(evt);
+            }
+        });
+
+        scoreTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                scoreTFActionPerformed(evt);
+            }
+        });
+
+        reviewTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reviewTFActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Leave a Review 1-5?");
+
+        submitBTN.setText("Submit");
+        submitBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitBTNActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -116,41 +187,50 @@ public class QuizGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(exitBTN)
-                        .addGap(97, 97, 97)
-                        .addComponent(titlLBL))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(156, 156, 156)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
                         .addComponent(startBTN)
-                        .addGap(134, 134, 134))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(answer1RBTN)
-                        .addGap(57, 57, 57)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(answer2RBTN)
-                    .addComponent(scoreLBL))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(222, 222, 222)
+                                .addComponent(nextBTN))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(5, 5, 5)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(scoreLBL)
+                                    .addComponent(instuctionLBL)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
-                        .addComponent(nextBTN)
-                        .addGap(76, 76, 76))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addComponent(answer3RBTN)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(212, 212, 212)
-                .addComponent(instuctionLBL)
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(77, 77, 77)
+                                        .addComponent(jLabel1))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(29, 29, 29)
+                                        .addComponent(reviewTF, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(36, 36, 36)
+                                        .addComponent(submitBTN))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(exitBTN)
+                                .addGap(143, 143, 143)
+                                .addComponent(titlLBL))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(answer1RBTN)
+                                .addGap(106, 106, 106)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(scoreTF, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(answer2RBTN)
+                                        .addGap(90, 90, 90)
+                                        .addComponent(answer3RBTN)))))))
+                .addContainerGap(89, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(178, 178, 178))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,27 +240,39 @@ public class QuizGUI extends javax.swing.JFrame {
                     .addComponent(exitBTN)
                     .addComponent(titlLBL))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(nextBTN)
-                            .addComponent(startBTN))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(instuctionLBL)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(answer2RBTN)
+                                    .addComponent(answer1RBTN)
+                                    .addComponent(answer3RBTN))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(nextBTN)
+                                    .addComponent(startBTN))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(scoreLBL)
+                                    .addComponent(scoreTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(26, 26, 26)))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(answer2RBTN)
-                            .addComponent(answer1RBTN)
-                            .addComponent(answer3RBTN))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                        .addComponent(scoreLBL)
-                        .addGap(29, 29, 29)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(23, 23, 23))))
+                            .addComponent(reviewTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(submitBTN))
+                        .addGap(302, 302, 302))))
         );
 
         pack();
@@ -188,6 +280,12 @@ public class QuizGUI extends javax.swing.JFrame {
 
     private void startBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBTNActionPerformed
         // TODO add your handling code here:
+       currentQindex = 0;
+       score = 0;
+       scoreTF.setText("0");
+       startBTN.setText("Start/Restart");
+       loadQ();
+       errorTA.setText("");
     }//GEN-LAST:event_startBTNActionPerformed
 
     private void answer1RBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_answer1RBTNActionPerformed
@@ -200,11 +298,57 @@ public class QuizGUI extends javax.swing.JFrame {
 
     private void exitBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBTNActionPerformed
         // TODO add your handling code here:
-        CleanEnergyGUI mainGUI = new CleanEnergyGUI();
-        mainGUI.setVisible(true); 
+        //CleanEnergyGUI mainGUI = new CleanEnergyGUI();
+        //mainGUI.setVisible(true); 
         this.setVisible(false); 
         this.dispose();
     }//GEN-LAST:event_exitBTNActionPerformed
+
+    private void scoreTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scoreTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_scoreTFActionPerformed
+
+    private void nextBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextBTNActionPerformed
+        // TODO add your handling code here:
+        int selectAns = 0;
+        if (currentQindex >= uQuiz.getNumQ()){ //method used to check if any questions are left to answer if none are left simply returns to prevent erors
+            errorTA.setText("no more questions left quiz complete");
+            startBTN.setText("Restart?");
+            return;
+        }
+        if(answer1RBTN.isSelected()){
+            selectAns = 1;
+        } else if (answer2RBTN.isSelected()){
+            selectAns = 2;
+        } else if (answer3RBTN.isSelected()){
+            selectAns = 3;
+        }
+        
+        if(selectAns != 0){//increase scores with correct answers, and loads next set of questions, these questions depends on the index of the currentQindex so that increases aswell
+            if(uQuiz.getCorrectAnsI(currentQindex) == selectAns) {
+                score++;
+            }
+                scoreTF.setText(String.valueOf(score));
+                currentQindex++;
+                loadQ();
+                errorTA.setText("");
+        }else{
+            errorTA.setText("choose an answer first");
+        }
+    }//GEN-LAST:event_nextBTNActionPerformed
+
+    private void answer3RBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_answer3RBTNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_answer3RBTNActionPerformed
+
+    private void reviewTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reviewTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_reviewTFActionPerformed
+
+    private void submitBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBTNActionPerformed
+        // TODO add your handling code here:
+        subReview();
+    }//GEN-LAST:event_submitBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,6 +376,9 @@ public class QuizGUI extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(QuizGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -245,15 +392,20 @@ public class QuizGUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton answer1RBTN;
     private javax.swing.JRadioButton answer2RBTN;
     private javax.swing.JRadioButton answer3RBTN;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JTextArea errorTA;
     private javax.swing.JButton exitBTN;
-    private javax.swing.JTextArea factTA;
     private javax.swing.JLabel instuctionLBL;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton nextBTN;
-    private javax.swing.JTextArea questioTA;
+    private javax.swing.JTextArea questionTA;
+    private javax.swing.JTextField reviewTF;
     private javax.swing.JLabel scoreLBL;
+    private javax.swing.JTextField scoreTF;
     private javax.swing.JButton startBTN;
+    private javax.swing.JButton submitBTN;
     private javax.swing.JLabel titlLBL;
     // End of variables declaration//GEN-END:variables
 }
