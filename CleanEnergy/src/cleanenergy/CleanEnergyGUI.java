@@ -15,6 +15,9 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
      */
     public CleanEnergyGUI() {
         initComponents();
+        mainGuiScrollP.getViewport().setOpaque(false);
+        //https://stackoverflow.com/questions/30435186/how-to-make-jtextarea-transparent-background 
+        mainGuiIntroTA.setText(" Empower your journey to sustainability with our Clean Energy app—featuring a carbon calculator, interactive game, and educational quiz!");
      
     }
 
@@ -34,8 +37,8 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         exitMainBTN = new javax.swing.JButton();
         mainTitleLBL = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        mainGuiScrollP = new javax.swing.JScrollPane();
+        mainGuiIntroTA = new javax.swing.JTextArea();
         backgroundIMGLBL = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -106,21 +109,30 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(140, 80, 0, 10);
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setBackground(new java.awt.Color(57, 39, 56, 20));
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setBorder(null);
-        jTextArea1.setOpaque(false);
-        jScrollPane1.setViewportView(jTextArea1);
+        mainGuiScrollP.setBackground(new java.awt.Color(255, 255, 255, 20));
+        mainGuiScrollP.setBorder(null);
+        mainGuiScrollP.setForeground(new java.awt.Color(255, 255, 255, 20));
+        mainGuiScrollP.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        mainGuiScrollP.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        mainGuiScrollP.setOpaque(false);
 
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(140, 80, 320, 87);
+        mainGuiIntroTA.setEditable(false);
+        mainGuiIntroTA.setBackground(new java.awt.Color(57, 39, 56, 20));
+        mainGuiIntroTA.setColumns(20);
+        mainGuiIntroTA.setFont(new java.awt.Font("Gujarati Sangam MN", 0, 12)); // NOI18N
+        mainGuiIntroTA.setForeground(new java.awt.Color(255, 255, 255));
+        mainGuiIntroTA.setLineWrap(true);
+        mainGuiIntroTA.setRows(5);
+        mainGuiIntroTA.setWrapStyleWord(true);
+        mainGuiIntroTA.setAutoscrolls(false);
+        mainGuiIntroTA.setBorder(null);
+        mainGuiIntroTA.setOpaque(false);
+        mainGuiScrollP.setViewportView(mainGuiIntroTA);
+
+        getContentPane().add(mainGuiScrollP);
+        mainGuiScrollP.setBounds(170, 70, 260, 120);
 
         backgroundIMGLBL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cleanenergy/sunrise-7674594_640.jpg"))); // NOI18N
-        backgroundIMGLBL.setMaximumSize(new java.awt.Dimension(609, 374));
-        backgroundIMGLBL.setMinimumSize(new java.awt.Dimension(609, 374));
-        backgroundIMGLBL.setPreferredSize(new java.awt.Dimension(609, 374));
         getContentPane().add(backgroundIMGLBL);
         backgroundIMGLBL.setBounds(0, 0, 650, 360);
 
@@ -203,9 +215,9 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
     private javax.swing.JLabel backgroundIMGLBL;
     private javax.swing.JButton exitMainBTN;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.ButtonGroup mainGuiBTNGroup;
+    private javax.swing.JTextArea mainGuiIntroTA;
+    private javax.swing.JScrollPane mainGuiScrollP;
     private javax.swing.JLabel mainTitleLBL;
     private javax.swing.JButton quizBTN;
     // End of variables declaration//GEN-END:variables
