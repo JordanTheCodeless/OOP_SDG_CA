@@ -52,6 +52,9 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         calcBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cleanenergy/calcImage.png"))); // NOI18N
         calcBTN.setBorderPainted(false);
         mainGuiBTNGroup.add(calcBTN);
+        calcBTN.setContentAreaFilled(false);
+        calcBTN.setFocusPainted(false);
+        calcBTN.setFocusTraversalKeysEnabled(false);
         calcBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 calcBTNActionPerformed(evt);
@@ -64,6 +67,8 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         gameBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cleanenergy/gameImage.png"))); // NOI18N
         gameBTN.setBorderPainted(false);
         mainGuiBTNGroup.add(gameBTN);
+        gameBTN.setContentAreaFilled(false);
+        gameBTN.setFocusPainted(false);
         gameBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gameBTNActionPerformed(evt);
@@ -76,6 +81,8 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         quizBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cleanenergy/quizImage.png"))); // NOI18N
         quizBTN.setBorderPainted(false);
         mainGuiBTNGroup.add(quizBTN);
+        quizBTN.setContentAreaFilled(false);
+        quizBTN.setFocusPainted(false);
         quizBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quizBTNActionPerformed(evt);
@@ -88,13 +95,15 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         exitMainBTN.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         exitMainBTN.setForeground(new java.awt.Color(255, 255, 255));
         exitMainBTN.setText("Exit");
+        exitMainBTN.setFocusTraversalKeysEnabled(false);
+        exitMainBTN.setFocusable(false);
         exitMainBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitMainBTNActionPerformed(evt);
             }
         });
         getContentPane().add(exitMainBTN);
-        exitMainBTN.setBounds(10, 320, 84, 23);
+        exitMainBTN.setBounds(20, 300, 84, 23);
 
         mainTitleLBL.setBackground(new java.awt.Color(255, 255, 255));
         mainTitleLBL.setFont(new java.awt.Font("Lucida Grande", 3, 36)); // NOI18N
@@ -202,7 +211,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(CleanEnergyGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+      
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
