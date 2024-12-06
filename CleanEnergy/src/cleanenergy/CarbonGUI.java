@@ -93,13 +93,16 @@ public class CarbonGUI extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         displayTA = new javax.swing.JTextArea();
         exitBTN = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        backgroundIMGLBL = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(186, 204, 65));
-        setPreferredSize(new java.awt.Dimension(691, 360));
+        setBounds(new java.awt.Rectangle(0, 0, 691, 374));
+        setMaximumSize(new java.awt.Dimension(609, 374));
+        setMinimumSize(new java.awt.Dimension(609, 374));
+        setPreferredSize(new java.awt.Dimension(609, 374));
         setResizable(false);
-        setSize(new java.awt.Dimension(691, 360));
+        setSize(new java.awt.Dimension(691, 374));
         getContentPane().setLayout(null);
 
         hiddenTabPanel.setBackground(new java.awt.Color(255, 255, 255, 20));
@@ -214,7 +217,7 @@ public class CarbonGUI extends javax.swing.JFrame {
         introPaneLayout.setHorizontalGroup(
             introPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(introPaneLayout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
+                .addContainerGap(29, Short.MAX_VALUE)
                 .addGroup(introPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, introPaneLayout.createSequentialGroup()
                         .addGroup(introPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -234,7 +237,7 @@ public class CarbonGUI extends javax.swing.JFrame {
                 .addComponent(introSecondTextLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(introThirdTextLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         carbonTabPane.addTab("tab4", introPane);
@@ -286,7 +289,7 @@ public class CarbonGUI extends javax.swing.JFrame {
                     .addComponent(gasTF, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(electricTF, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(oilTF, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(166, Short.MAX_VALUE))
+                .addContainerGap(153, Short.MAX_VALUE))
         );
         billsPaneLayout.setVerticalGroup(
             billsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -488,10 +491,10 @@ public class CarbonGUI extends javax.swing.JFrame {
         getContentPane().add(exitBTN);
         exitBTN.setBounds(500, 20, 100, 30);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cleanenergy/sunrise-7674594_640.jpg"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, -50, 610, 410);
+        backgroundIMGLBL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cleanenergy/sunrise-7674594_640.jpg"))); // NOI18N
+        backgroundIMGLBL.setText("jLabel1");
+        getContentPane().add(backgroundIMGLBL);
+        backgroundIMGLBL.setBounds(0, -30, 610, 410);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -736,6 +739,7 @@ try {
     private javax.swing.JButton addBTN;
     private javax.swing.JLabel aluminiumLBL;
     private javax.swing.JCheckBox aluminumCB;
+    private javax.swing.JLabel backgroundIMGLBL;
     private javax.swing.JPanel billsPane;
     private javax.swing.JRadioButton billsRB;
     private javax.swing.JLabel carYearlyLBL;
@@ -760,7 +764,6 @@ try {
     private javax.swing.JPanel introPane;
     private javax.swing.JLabel introSecondTextLBL;
     private javax.swing.JLabel introThirdTextLBL;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton loadBTN;
     private javax.swing.JCheckBox newspaperCB;
