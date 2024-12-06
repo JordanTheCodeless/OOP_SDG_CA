@@ -5,8 +5,6 @@
 package cleanenergy;
 
 
-import cleanenergy.CarbonFootPrint;
-import cleanenergy.CarbonBills;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -14,6 +12,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import javax.swing.UIManager;
 
 /**
  *
@@ -93,16 +92,18 @@ public class CarbonGUI extends javax.swing.JFrame {
         addBTN = new javax.swing.JButton();
         saveBTN = new javax.swing.JButton();
         displayBTN = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(186, 204, 65));
         setPreferredSize(new java.awt.Dimension(691, 360));
         setResizable(false);
         setSize(new java.awt.Dimension(691, 360));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(null);
 
         hiddenTabPanel.setLayout(new javax.swing.OverlayLayout(hiddenTabPanel));
-        getContentPane().add(hiddenTabPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, -20, 44, 270));
+        getContentPane().add(hiddenTabPanel);
+        hiddenTabPanel.setBounds(-30, -20, 44, 270);
 
         carbonButtonGroup.add(billsRB);
         billsRB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -117,7 +118,8 @@ public class CarbonGUI extends javax.swing.JFrame {
                 billsRBActionPerformed(evt);
             }
         });
-        getContentPane().add(billsRB, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 90, 20));
+        getContentPane().add(billsRB);
+        billsRB.setBounds(70, 20, 90, 20);
 
         carbonButtonGroup.add(transportRB);
         transportRB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -127,7 +129,8 @@ public class CarbonGUI extends javax.swing.JFrame {
                 transportRBActionPerformed(evt);
             }
         });
-        getContentPane().add(transportRB, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 140, 20));
+        getContentPane().add(transportRB);
+        transportRB.setBounds(210, 20, 140, 20);
 
         carbonButtonGroup.add(recyclingRB);
         recyclingRB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -137,9 +140,10 @@ public class CarbonGUI extends javax.swing.JFrame {
                 recyclingRBActionPerformed(evt);
             }
         });
-        getContentPane().add(recyclingRB, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 150, 20));
+        getContentPane().add(recyclingRB);
+        recyclingRB.setBounds(380, 20, 150, 20);
 
-        carbonTabPane.setBackground(new java.awt.Color(65, 65, 65));
+        carbonTabPane.setBackground(new java.awt.Color(255, 255, 255, 20));
         carbonTabPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
 
         recyclePane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -321,13 +325,15 @@ public class CarbonGUI extends javax.swing.JFrame {
 
         carbonTabPane.addTab("tab4", transportPane);
 
-        getContentPane().add(carbonTabPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(-100, 70, 670, 150));
+        getContentPane().add(carbonTabPane);
+        carbonTabPane.setBounds(-100, 70, 670, 150);
 
         errorLBL.setBackground(new java.awt.Color(204, 0, 0));
         errorLBL.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         errorLBL.setForeground(new java.awt.Color(153, 0, 0));
         errorLBL.setText("PLEASE ENTER A NUMBER !!!!");
-        getContentPane().add(errorLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 210, 20));
+        getContentPane().add(errorLBL);
+        errorLBL.setBounds(180, 50, 210, 20);
 
         loadBTN.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         loadBTN.setText("Load");
@@ -398,7 +404,13 @@ public class CarbonGUI extends javax.swing.JFrame {
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
-        getContentPane().add(displayPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 500, 130));
+        getContentPane().add(displayPanel);
+        displayPanel.setBounds(50, 220, 500, 130);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cleanenergy/sunrise-7674594_640.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, -50, 610, 410);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -618,7 +630,11 @@ public class CarbonGUI extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-
+try {
+    UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+} catch (Exception e) {
+    e.printStackTrace();
+}
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -654,6 +670,7 @@ public class CarbonGUI extends javax.swing.JFrame {
     private javax.swing.JPanel introPane;
     private javax.swing.JLabel introSecondTextLBL;
     private javax.swing.JLabel introThirdTextLBL;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton loadBTN;
     private javax.swing.JCheckBox newspaperCB;
