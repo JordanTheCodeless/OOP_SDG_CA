@@ -78,7 +78,7 @@ public class GameGUI extends javax.swing.JFrame {
 
         backBTN.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         backBTN.setForeground(new java.awt.Color(255, 51, 51));
-        backBTN.setText("Exit");
+        backBTN.setText("Back");
         backBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backBTNActionPerformed(evt);
@@ -210,12 +210,10 @@ public class GameGUI extends javax.swing.JFrame {
 
     private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
         // TODO add your handling code here:
-//        CleanEnergyGUI mainGUI = new CleanEnergyGUI(); 
-//        mainGUI.setVisible(true); 
-//        this.setVisible(false); 
-//        this.dispose();
-        System.exit(1);
-        //RETRUN TO BACK BUTTON STATE AFTER REFACTOR
+        CleanEnergyGUI mainGUI = new CleanEnergyGUI(); 
+        mainGUI.setVisible(true); 
+        this.setVisible(false); 
+        this.dispose();
 
 
 //UN-COMMENT PART WHEN REFACTORED TO MAIN PROJECT.
@@ -268,7 +266,6 @@ public class GameGUI extends javax.swing.JFrame {
             messageArea.setVisible(false);
             currentScoreLBL.setVisible(false);
             scoreLBL.setText("Your final score was: "+ engine.getScore());
-            backBTN.setVisible(false);
             if(engine.getHealth() <= 0){
                 showQuestion.append(" \nYou ran out of health!");
             }else{

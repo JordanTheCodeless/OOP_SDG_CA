@@ -102,7 +102,7 @@ public class CarbonGUI extends javax.swing.JFrame {
         getContentPane().add(hiddenTabPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, -20, 44, 270));
 
         carbonButtonGroup.add(billsRB);
-        billsRB.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
+        billsRB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         billsRB.setText("Bills");
         billsRB.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -117,7 +117,7 @@ public class CarbonGUI extends javax.swing.JFrame {
         getContentPane().add(billsRB, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 90, 20));
 
         carbonButtonGroup.add(transportRB);
-        transportRB.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
+        transportRB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         transportRB.setText("Transport");
         transportRB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,7 +127,7 @@ public class CarbonGUI extends javax.swing.JFrame {
         getContentPane().add(transportRB, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 140, 20));
 
         carbonButtonGroup.add(recyclingRB);
-        recyclingRB.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
+        recyclingRB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         recyclingRB.setText("Recycling");
         recyclingRB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,31 +158,31 @@ public class CarbonGUI extends javax.swing.JFrame {
         });
         recyclePane.add(newspaperCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, -1, -1));
 
-        aluminiumLBL.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
+        aluminiumLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         aluminiumLBL.setText("Aluminium : ");
         recyclePane.add(aluminiumLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 120, -1));
 
-        newspaperLBL.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
+        newspaperLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         newspaperLBL.setText("Newspaper :");
         recyclePane.add(newspaperLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, -1, -1));
 
-        recyclingTitleLBL.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
+        recyclingTitleLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         recyclingTitleLBL.setText("Please Tick The Following Boxes ");
         recyclePane.add(recyclingTitleLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 340, 20));
 
-        recyclingTitleLBLTwo.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
+        recyclingTitleLBLTwo.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         recyclingTitleLBLTwo.setText("If you Recycle These Materials :");
         recyclePane.add(recyclingTitleLBLTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 310, -1));
 
         carbonTabPane.addTab("recycleTab", recyclePane);
 
-        introFirstTextLBL.setFont(new java.awt.Font("Charter", 0, 18)); // NOI18N
+        introFirstTextLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         introFirstTextLBL.setText("This is the Carbon Footprint Calculator");
 
-        introSecondTextLBL.setFont(new java.awt.Font("Charter", 0, 18)); // NOI18N
+        introSecondTextLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         introSecondTextLBL.setText("To begin please select one of the radio buttons above");
 
-        introThirdTextLBL.setFont(new java.awt.Font("Charter", 0, 18)); // NOI18N
+        introThirdTextLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         introThirdTextLBL.setText("p.s don't enter any letters when entering values ....");
 
         javax.swing.GroupLayout introPaneLayout = new javax.swing.GroupLayout(introPane);
@@ -190,7 +190,7 @@ public class CarbonGUI extends javax.swing.JFrame {
         introPaneLayout.setHorizontalGroup(
             introPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(introPaneLayout.createSequentialGroup()
-                .addContainerGap(79, Short.MAX_VALUE)
+                .addContainerGap(32, Short.MAX_VALUE)
                 .addGroup(introPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, introPaneLayout.createSequentialGroup()
                         .addGroup(introPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -215,13 +215,13 @@ public class CarbonGUI extends javax.swing.JFrame {
 
         carbonTabPane.addTab("tab4", introPane);
 
-        electricBillLBL.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
+        electricBillLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         electricBillLBL.setText("Electric bill :");
 
-        gasBIllLBL.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
+        gasBIllLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         gasBIllLBL.setText("Gas Bill :");
 
-        oilBillLBL.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
+        oilBillLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         oilBillLBL.setText("Oil bill :");
 
         electricTF.addActionListener(new java.awt.event.ActionListener() {
@@ -245,7 +245,7 @@ public class CarbonGUI extends javax.swing.JFrame {
                     .addComponent(gasTF, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(electricTF, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(oilTF, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(148, Short.MAX_VALUE))
+                .addContainerGap(166, Short.MAX_VALUE))
         );
         billsPaneLayout.setVerticalGroup(
             billsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,13 +267,13 @@ public class CarbonGUI extends javax.swing.JFrame {
 
         carbonTabPane.addTab("tab4", billsPane);
 
-        flightsLessLBL.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
+        flightsLessLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         flightsLessLBL.setText("Flights that were four hours or more :");
 
-        carYearlyLBL.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
+        carYearlyLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         carYearlyLBL.setText("Your cars yearly mileage :");
 
-        flightsMoreLBL.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
+        flightsMoreLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         flightsMoreLBL.setText("Flights that were less than four hours :");
 
         javax.swing.GroupLayout transportPaneLayout = new javax.swing.GroupLayout(transportPane);
@@ -321,11 +321,12 @@ public class CarbonGUI extends javax.swing.JFrame {
         getContentPane().add(carbonTabPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(-100, 70, 670, 150));
 
         errorLBL.setBackground(new java.awt.Color(204, 0, 0));
+        errorLBL.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         errorLBL.setForeground(new java.awt.Color(153, 0, 0));
         errorLBL.setText("PLEASE ENTER A NUMBER !!!!");
         getContentPane().add(errorLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 210, 20));
 
-        loadBTN.setFont(new java.awt.Font("American Typewriter", 0, 13)); // NOI18N
+        loadBTN.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         loadBTN.setText("Load");
         loadBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -334,10 +335,11 @@ public class CarbonGUI extends javax.swing.JFrame {
         });
 
         displayTA.setColumns(20);
+        displayTA.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         displayTA.setRows(5);
         jScrollPane2.setViewportView(displayTA);
 
-        addBTN.setFont(new java.awt.Font("American Typewriter", 0, 13)); // NOI18N
+        addBTN.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         addBTN.setText("Add");
         addBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -345,7 +347,7 @@ public class CarbonGUI extends javax.swing.JFrame {
             }
         });
 
-        saveBTN.setFont(new java.awt.Font("American Typewriter", 0, 13)); // NOI18N
+        saveBTN.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         saveBTN.setText("Save");
         saveBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -353,7 +355,7 @@ public class CarbonGUI extends javax.swing.JFrame {
             }
         });
 
-        displayBTN.setFont(new java.awt.Font("American Typewriter", 0, 14)); // NOI18N
+        displayBTN.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         displayBTN.setText("Display");
         displayBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
