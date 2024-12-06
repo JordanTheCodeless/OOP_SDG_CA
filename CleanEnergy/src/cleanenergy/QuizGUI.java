@@ -78,14 +78,22 @@ public class QuizGUI extends javax.swing.JFrame {
         reviewTF = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         submitBTN = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(609, 374));
+        setBounds(new java.awt.Rectangle(0, 0, 609, 374));
+        setMaximumSize(new java.awt.Dimension(600, 374));
+        setMinimumSize(new java.awt.Dimension(600, 374));
+        setPreferredSize(new java.awt.Dimension(600, 374));
         setResizable(false);
+        getContentPane().setLayout(null);
 
         titlLBL.setBackground(new java.awt.Color(204, 204, 204));
         titlLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        titlLBL.setForeground(new java.awt.Color(255, 255, 255));
         titlLBL.setText("Welcome to the Quiz!");
+        getContentPane().add(titlLBL);
+        titlLBL.setBounds(166, 18, 187, 22);
 
         exitBTN.setBackground(new java.awt.Color(255, 51, 0));
         exitBTN.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -96,15 +104,28 @@ public class QuizGUI extends javax.swing.JFrame {
                 exitBTNActionPerformed(evt);
             }
         });
+        getContentPane().add(exitBTN);
+        exitBTN.setBounds(31, 21, 72, 21);
 
+        questionTA.setEditable(false);
+        questionTA.setBackground(new java.awt.Color(51, 51, 51));
         questionTA.setColumns(20);
-        questionTA.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        questionTA.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        questionTA.setForeground(new java.awt.Color(255, 255, 255));
+        questionTA.setLineWrap(true);
         questionTA.setRows(5);
         questionTA.setText("QUESTIONS WILL BE DISPLAYED HERE");
+        questionTA.setWrapStyleWord(true);
         jScrollPane1.setViewportView(questionTA);
 
-        instuctionLBL.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(45, 60, 297, 72);
+
+        instuctionLBL.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        instuctionLBL.setForeground(new java.awt.Color(255, 255, 255));
         instuctionLBL.setText("Select one of the three buttons");
+        getContentPane().add(instuctionLBL);
+        instuctionLBL.setBounds(90, 140, 260, 17);
 
         nextBTN.setBackground(new java.awt.Color(51, 255, 51));
         nextBTN.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -114,10 +135,15 @@ public class QuizGUI extends javax.swing.JFrame {
                 nextBTNActionPerformed(evt);
             }
         });
+        getContentPane().add(nextBTN);
+        nextBTN.setBounds(220, 200, 110, 30);
 
         scoreLBL.setBackground(new java.awt.Color(204, 204, 204));
         scoreLBL.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        scoreLBL.setForeground(new java.awt.Color(255, 255, 255));
         scoreLBL.setText("Score: ");
+        getContentPane().add(scoreLBL);
+        scoreLBL.setBounds(120, 240, 39, 15);
 
         startBTN.setBackground(new java.awt.Color(51, 255, 51));
         startBTN.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -127,154 +153,100 @@ public class QuizGUI extends javax.swing.JFrame {
                 startBTNActionPerformed(evt);
             }
         });
+        getContentPane().add(startBTN);
+        startBTN.setBounds(70, 200, 110, 30);
 
+        errorTA.setEditable(false);
+        errorTA.setBackground(new java.awt.Color(51, 51, 51));
         errorTA.setColumns(20);
         errorTA.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        errorTA.setForeground(new java.awt.Color(255, 255, 255));
+        errorTA.setLineWrap(true);
         errorTA.setRows(5);
         jScrollPane2.setViewportView(errorTA);
 
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(50, 270, 297, 58);
+
         buttonGroup1.add(answer1RBTN);
-        answer1RBTN.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        answer1RBTN.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        answer1RBTN.setForeground(new java.awt.Color(255, 255, 255));
         answer1RBTN.setText("1");
         answer1RBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 answer1RBTNActionPerformed(evt);
             }
         });
+        getContentPane().add(answer1RBTN);
+        answer1RBTN.setBounds(20, 170, 130, 21);
 
         buttonGroup1.add(answer2RBTN);
-        answer2RBTN.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        answer2RBTN.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        answer2RBTN.setForeground(new java.awt.Color(255, 255, 255));
         answer2RBTN.setText("2");
         answer2RBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 answer2RBTNActionPerformed(evt);
             }
         });
+        getContentPane().add(answer2RBTN);
+        answer2RBTN.setBounds(150, 170, 140, 21);
 
         buttonGroup1.add(answer3RBTN);
-        answer3RBTN.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        answer3RBTN.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        answer3RBTN.setForeground(new java.awt.Color(255, 255, 255));
         answer3RBTN.setText("3");
         answer3RBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 answer3RBTNActionPerformed(evt);
             }
         });
+        getContentPane().add(answer3RBTN);
+        answer3RBTN.setBounds(300, 170, 140, 21);
 
+        scoreTF.setBackground(new java.awt.Color(51, 51, 51));
+        scoreTF.setForeground(new java.awt.Color(255, 255, 255));
         scoreTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 scoreTFActionPerformed(evt);
             }
         });
+        getContentPane().add(scoreTF);
+        scoreTF.setBounds(180, 240, 43, 23);
 
+        reviewTF.setBackground(new java.awt.Color(51, 51, 51));
+        reviewTF.setForeground(new java.awt.Color(255, 255, 255));
         reviewTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 reviewTFActionPerformed(evt);
             }
         });
+        getContentPane().add(reviewTF);
+        reviewTF.setBounds(400, 90, 87, 23);
 
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Leave a Review 1-5?");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(370, 60, 140, 20);
 
+        submitBTN.setBackground(new java.awt.Color(102, 102, 102));
+        submitBTN.setFont(new java.awt.Font("Century Gothic", 0, 18));
+        submitBTN.setForeground(new java.awt.Color(255, 255, 255));
         submitBTN.setText("Submit");
         submitBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitBTNActionPerformed(evt);
             }
         });
+        getContentPane().add(submitBTN);
+        submitBTN.setBounds(410, 120, 72, 23);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(startBTN)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(222, 222, 222)
-                                .addComponent(nextBTN))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(5, 5, 5)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(scoreLBL)
-                                    .addComponent(instuctionLBL)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(77, 77, 77)
-                                        .addComponent(jLabel1))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(29, 29, 29)
-                                        .addComponent(reviewTF, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(36, 36, 36)
-                                        .addComponent(submitBTN))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(exitBTN)
-                                .addGap(143, 143, 143)
-                                .addComponent(titlLBL))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(answer1RBTN)
-                                .addGap(106, 106, 106)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(scoreTF, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(answer2RBTN)
-                                        .addGap(90, 90, 90)
-                                        .addComponent(answer3RBTN)))))))
-                .addContainerGap(89, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(178, 178, 178))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(exitBTN)
-                    .addComponent(titlLBL))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(instuctionLBL)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(answer2RBTN)
-                                    .addComponent(answer1RBTN)
-                                    .addComponent(answer3RBTN))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(nextBTN)
-                                    .addComponent(startBTN))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(scoreLBL)
-                                    .addComponent(scoreTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(26, 26, 26)))
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(reviewTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(submitBTN))
-                        .addGap(302, 302, 302))))
-        );
+        jLabel2.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cleanenergy/sunrise-7674594_640.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, -10, 600, 390);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -398,6 +370,7 @@ public class QuizGUI extends javax.swing.JFrame {
     private javax.swing.JButton exitBTN;
     private javax.swing.JLabel instuctionLBL;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton nextBTN;

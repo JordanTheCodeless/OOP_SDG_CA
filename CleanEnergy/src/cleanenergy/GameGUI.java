@@ -36,7 +36,8 @@ public class GameGUI extends javax.swing.JFrame {
         nameTF.setVisible(false);
         submitNameBTN.setVisible(false);
         nextBTN.setVisible(false);
-        
+        currentScoreLBL.setVisible(false);
+        instructionsTA.getViewport().setOpaque(false);
         engine = new GameEngine();
         health = 0;
         score = engine.getScore();
@@ -70,54 +71,71 @@ public class GameGUI extends javax.swing.JFrame {
         showQuestion = new javax.swing.JTextArea();
         livesLBL = new javax.swing.JLabel();
         healthBar = new javax.swing.JProgressBar();
+        imgBackgroundLBL = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(691, 360));
+        setMaximumSize(new java.awt.Dimension(609, 374));
+        setMinimumSize(new java.awt.Dimension(609, 374));
+        setPreferredSize(new java.awt.Dimension(609, 374));
         setResizable(false);
+        setSize(new java.awt.Dimension(691, 374));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        backBTN.setBackground(new java.awt.Color(255, 51, 51));
         backBTN.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        backBTN.setForeground(new java.awt.Color(255, 51, 51));
-        backBTN.setText("Back");
+        backBTN.setForeground(new java.awt.Color(255, 255, 255));
+        backBTN.setText("EXIT");
         backBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backBTNActionPerformed(evt);
             }
         });
-        getContentPane().add(backBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 320, 90, 40));
+        getContentPane().add(backBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 310, 100, 30));
 
-        higherBTN.setBackground(new java.awt.Color(255, 51, 51));
+        higherBTN.setBackground(new java.awt.Color(255, 102, 102));
         higherBTN.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        higherBTN.setForeground(new java.awt.Color(255, 255, 255));
         higherBTN.setText("HIGHER");
         higherBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 higherBTNActionPerformed(evt);
             }
         });
-        getContentPane().add(higherBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 154, 40));
+        getContentPane().add(higherBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 154, 40));
 
         scoreLBL.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        scoreLBL.setForeground(new java.awt.Color(255, 255, 255));
         scoreLBL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         scoreLBL.setText("Your score was 10/10 congrats!");
-        getContentPane().add(scoreLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 680, -1));
+        getContentPane().add(scoreLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 140, 680, -1));
 
         messageAreaText.setEditable(false);
+        messageAreaText.setBackground(new java.awt.Color(51, 51, 51));
         messageAreaText.setColumns(20);
         messageAreaText.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        messageAreaText.setForeground(new java.awt.Color(255, 255, 255));
         messageAreaText.setLineWrap(true);
         messageAreaText.setRows(5);
+        messageAreaText.setWrapStyleWord(true);
         messageArea.setViewportView(messageAreaText);
 
-        getContentPane().add(messageArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 690, 119));
+        getContentPane().add(messageArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 550, 110));
+
+        instructionsTA.setBorder(null);
+        instructionsTA.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        instructionsTA.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        instructionsTA.setOpaque(false);
 
         instructionsTAtext.setEditable(false);
+        instructionsTAtext.setBackground(new java.awt.Color(255, 255, 255,20));
         instructionsTAtext.setColumns(20);
         instructionsTAtext.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        instructionsTAtext.setForeground(new java.awt.Color(255, 255, 255));
         instructionsTAtext.setRows(5);
         instructionsTAtext.setText("Instructions: \nFirst, read the question carefully.\nSecond, try to guess a value, the range is between 0 and 100 kg. \nThird, click the submit button and see the results!\n");
         instructionsTA.setViewportView(instructionsTAtext);
 
-        getContentPane().add(instructionsTA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 680, 110));
+        getContentPane().add(instructionsTA, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 590, 110));
 
         gameStartBTN.setBackground(new java.awt.Color(255, 51, 51));
         gameStartBTN.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -128,36 +146,44 @@ public class GameGUI extends javax.swing.JFrame {
                 gameStartBTNActionPerformed(evt);
             }
         });
-        getContentPane().add(gameStartBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 185, 47));
+        getContentPane().add(gameStartBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 185, 47));
 
+        nameTF.setBackground(new java.awt.Color(51, 51, 51));
         nameTF.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        getContentPane().add(nameTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 170, 40));
+        nameTF.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(nameTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 170, 40));
 
+        submitNameBTN.setBackground(new java.awt.Color(102, 102, 102));
         submitNameBTN.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        submitNameBTN.setForeground(new java.awt.Color(255, 255, 255));
         submitNameBTN.setText("Submit name");
         submitNameBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitNameBTNActionPerformed(evt);
             }
         });
-        getContentPane().add(submitNameBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 160, 40));
+        getContentPane().add(submitNameBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 220, 160, 40));
 
         currentScoreLBL.setBackground(new java.awt.Color(255, 255, 0));
         currentScoreLBL.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        currentScoreLBL.setForeground(new java.awt.Color(255, 255, 255));
         currentScoreLBL.setText("Score: 0");
         getContentPane().add(currentScoreLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 90, 30));
 
+        nextBTN.setBackground(new java.awt.Color(51, 51, 51));
         nextBTN.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        nextBTN.setForeground(new java.awt.Color(255, 255, 255));
         nextBTN.setText("Next ");
         nextBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nextBTNActionPerformed(evt);
             }
         });
-        getContentPane().add(nextBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 160, 50));
+        getContentPane().add(nextBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, 150, 40));
 
-        lowerBTN.setBackground(new java.awt.Color(51, 255, 51));
+        lowerBTN.setBackground(new java.awt.Color(51, 153, 0));
         lowerBTN.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lowerBTN.setForeground(new java.awt.Color(255, 255, 255));
         lowerBTN.setText("LOWER");
         lowerBTN.setMaximumSize(new java.awt.Dimension(98, 34));
         lowerBTN.setMinimumSize(new java.awt.Dimension(98, 34));
@@ -166,27 +192,34 @@ public class GameGUI extends javax.swing.JFrame {
                 lowerBTNActionPerformed(evt);
             }
         });
-        getContentPane().add(lowerBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 150, 40));
+        getContentPane().add(lowerBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 150, 40));
 
         question.setBackground(new java.awt.Color(255, 255, 255));
 
         showQuestion.setEditable(false);
+        showQuestion.setBackground(new java.awt.Color(51, 51, 51));
         showQuestion.setColumns(20);
         showQuestion.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        showQuestion.setForeground(new java.awt.Color(255, 255, 255));
         showQuestion.setLineWrap(true);
         showQuestion.setRows(5);
+        showQuestion.setWrapStyleWord(true);
         question.setViewportView(showQuestion);
 
-        getContentPane().add(question, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 680, 70));
+        getContentPane().add(question, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 590, 70));
 
         livesLBL.setBackground(new java.awt.Color(255, 51, 51));
         livesLBL.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        livesLBL.setForeground(new java.awt.Color(255, 255, 255));
         livesLBL.setText("Health:");
-        getContentPane().add(livesLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, 60, 30));
+        getContentPane().add(livesLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 60, 30));
 
         healthBar.setBackground(new java.awt.Color(255, 0, 0));
         healthBar.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(healthBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 20, -1, 30));
+        getContentPane().add(healthBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, 130, 30));
+
+        imgBackgroundLBL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cleanenergy/sunrise-7674594_640.jpg"))); // NOI18N
+        getContentPane().add(imgBackgroundLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 370));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -206,6 +239,7 @@ public class GameGUI extends javax.swing.JFrame {
         instructionsTAtext.setVisible(false);
         messageAreaText.setText("");
         showQuestion.setText(engine.getNextQuestion());
+        currentScoreLBL.setVisible(true);
     }//GEN-LAST:event_gameStartBTNActionPerformed
 
     private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
@@ -343,6 +377,7 @@ public class GameGUI extends javax.swing.JFrame {
     private javax.swing.JButton gameStartBTN;
     private javax.swing.JProgressBar healthBar;
     private javax.swing.JButton higherBTN;
+    private javax.swing.JLabel imgBackgroundLBL;
     private javax.swing.JScrollPane instructionsTA;
     private javax.swing.JTextArea instructionsTAtext;
     private javax.swing.JLabel livesLBL;
