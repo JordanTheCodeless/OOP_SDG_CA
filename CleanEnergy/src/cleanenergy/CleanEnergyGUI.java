@@ -54,7 +54,6 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         mainGuiBTNGroup.add(calcBTN);
         calcBTN.setContentAreaFilled(false);
         calcBTN.setFocusPainted(false);
-        calcBTN.setFocusTraversalKeysEnabled(false);
         calcBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 calcBTNActionPerformed(evt);
@@ -95,7 +94,6 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         exitMainBTN.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         exitMainBTN.setForeground(new java.awt.Color(255, 255, 255));
         exitMainBTN.setText("Exit");
-        exitMainBTN.setFocusTraversalKeysEnabled(false);
         exitMainBTN.setFocusable(false);
         exitMainBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
