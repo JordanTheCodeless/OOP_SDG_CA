@@ -22,8 +22,6 @@ import javax.swing.UIManager;
 public class CarbonGUI extends javax.swing.JFrame {
 // declare my variables
     ArrayList<CarbonUser> userList;
-    ArrayList<CarbonFootPrint> footPrints;
-    ArrayList usersFootprints;
     double value;
     double electricBill;
     double gasBill;
@@ -33,23 +31,21 @@ public class CarbonGUI extends javax.swing.JFrame {
     double carYearlyMileage;
     String userName;
     String errorMessage;
-    boolean billsAdded = false;
+    boolean billsAdded = false; // Boolean values to ensure the user has only added type of bill once 
     boolean transportAdded = false;
     boolean recyclingAdded = false;
-    String nameChecker;
     CarbonUser newUser;
      
      
     public CarbonGUI() {
         initComponents();
         userList = new ArrayList<>();
-        footPrints = new ArrayList<>();
-        newUser = new CarbonUser("");
-        usersFootprints = newUser.getUserCarbonFootprint();
         errorLBL.setVisible(false);
         carbonTabPane.setSelectedComponent(introSubmitPane);
         displayPanel.setVisible(false);
-        
+        billsRB.setVisible(false);
+        transportRB.setVisible(false);
+        recyclingRB.setVisible(false);
 
     }
 
@@ -540,7 +536,7 @@ public class CarbonGUI extends javax.swing.JFrame {
         backgroundIMGLBL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cleanenergy/sunrise-7674594_640.jpg"))); // NOI18N
         backgroundIMGLBL.setText("jLabel1");
         getContentPane().add(backgroundIMGLBL);
-        backgroundIMGLBL.setBounds(0, -30, 610, 410);
+        backgroundIMGLBL.setBounds(0, -20, 610, 410);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -601,7 +597,7 @@ public class CarbonGUI extends javax.swing.JFrame {
             CarbonRecycle carbonRecycle = new CarbonRecycle("Recycling", value, isAluminumRecycled, isNewspaperRecycled);
             carbonRecycle.computeCarbonFoot();
 
-            footPrints.add(carbonRecycle);
+//            footPrints.add(carbonRecycle);
             newUser.addFootprint(carbonRecycle);
             displayTA.append("\nRecycling added");
             errorLBL.setVisible(false);
@@ -620,7 +616,7 @@ public class CarbonGUI extends javax.swing.JFrame {
 
             CarbonFootPrint carbonTransport = new CarbonTransport("Transport", value, flightLessFour, flightMoreFour,  carYearlyMileage);
             carbonTransport.computeCarbonFoot();
-            footPrints.add(carbonTransport);
+//            footPrints.add(carbonTransport);
             newUser.addFootprint(carbonTransport);
             displayTA.append("\nTransport added");
             errorLBL.setVisible(false);
@@ -649,10 +645,10 @@ public class CarbonGUI extends javax.swing.JFrame {
             fStream = new FileOutputStream(f);
             oStream = new ObjectOutputStream(fStream);
             oStream.writeObject(userList);
-            oStream.writeObject(footPrints);
+//            oStream.writeObject(footPrints);
+            oStream.writeObject(newUser.getUserCarbonFootprint()) ; 
             oStream.close();
-            displayTA.append("\nSuccesfully saved file");
-            System.out.println(footPrints);
+            displayTA.append("\nSuccesfully saved file\n");
         } catch (IOException e) {
             System.out.println("I/O e :" + e);
         }
@@ -667,7 +663,6 @@ public class CarbonGUI extends javax.swing.JFrame {
             fStream = new FileInputStream(f);
             oStream = new ObjectInputStream(fStream);
             userList = (ArrayList<CarbonUser>) oStream.readObject();
-            footPrints = (ArrayList<CarbonFootPrint>) oStream.readObject();
             oStream.close();
 
         } catch (IOException | ClassNotFoundException e) {
@@ -691,20 +686,28 @@ public class CarbonGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         loadFile();
         displayTA.append("\nData loaded successfully.\n");
-        for(CarbonUser user : userList){
-            displayTA.append(user.getUserName() +"\n");
-        for (CarbonFootPrint footPrint : footPrints) {
-            displayTA.append(footPrint.toString() + "\n");
-            
+//        for(CarbonUser user : userList){
+//            displayTA.append(user.getUserName() +"\n");
+//        for (CarbonFootPrint footPrint : footPrints) {
+//            displayTA.append(footPrint.toString() + "\n");
+//            
+//        }
+          for(CarbonUser user : userList){
+              displayTA.append("\n" + user.getUserName() + "\n");
+              for (CarbonFootPrint footprint : user.getUserCarbonFootprint()) {
+            displayTA.append(footprint.toString() + "\n");
         }
         }
     }//GEN-LAST:event_loadBTNActionPerformed
 
     private void displayBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayBTNActionPerformed
         // TODO add your handling code here:
-        for (CarbonFootPrint print : footPrints) {
-            displayTA.append("\n" + print.toString());
-        }
+            for(CarbonUser user : userList){
+              displayTA.append(user.getUserName() + "\n");
+              for (CarbonFootPrint footprint : user.getUserCarbonFootprint()) {
+            displayTA.append(footprint.toString() + "\n");
+              }
+            }
     }//GEN-LAST:event_displayBTNActionPerformed
 
     private void billsRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_billsRBActionPerformed
@@ -773,6 +776,9 @@ public class CarbonGUI extends javax.swing.JFrame {
                 userNameLBL.setVisible(false);
                 userNameSubmitBTN.setVisible(false);
                 greetingLBL.setText("Cheers " + userName + ", Click a button up top to begin");
+                billsRB.setVisible(true);
+                transportRB.setVisible(true);
+                 recyclingRB.setVisible(true);
             try { 
                 f = new File("footprints.dat");
                 fStream = new FileOutputStream(f);

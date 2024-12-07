@@ -22,7 +22,7 @@ import cleanenergy.CarbonFootPrint;
         this.flightLessFour = flightLessFour;
         this.flightMoreFour = flightMoreFour;
         this.carYearlyMileage = carYearlyMileage;
-        transports = new double[]{carYearlyMileage,flightLessFour,flightMoreFour};
+//        transports = new double[]{carYearlyMileage,flightLessFour,flightMoreFour};
     }
      
 
@@ -55,7 +55,7 @@ import cleanenergy.CarbonFootPrint;
    @Override
    // Abstract method
     public double computeCarbonFoot(){
-        return value = ((transports[0] * 0.79) + (transports[1] * 1100) + (transports[2] * 4400));
+        return value = ((carYearlyMileage * 0.79) + (flightLessFour * 1100) + (flightMoreFour * 4400));
     }
    @Override
     public String toString(){
