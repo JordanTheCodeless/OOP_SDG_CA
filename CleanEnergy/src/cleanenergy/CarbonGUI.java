@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 /**
@@ -19,9 +20,10 @@ import javax.swing.UIManager;
  * @author jordancarthy
  */
 public class CarbonGUI extends javax.swing.JFrame {
-    ArrayList usersList;
 // declare my variables
-        ArrayList<CarbonFootPrint> footPrints;
+    ArrayList<CarbonUser> userList;
+    ArrayList<CarbonFootPrint> footPrints;
+    ArrayList usersFootprints;
     double value;
     double electricBill;
     double gasBill;
@@ -29,18 +31,25 @@ public class CarbonGUI extends javax.swing.JFrame {
     double flightLessFour;
     double flightMoreFour;
     double carYearlyMileage;
-    String name  = "Jordan";
-    /**
-     * Creates new form CarbonFootCalc
-     */
+    String userName;
+    String errorMessage;
+    boolean billsAdded = false;
+    boolean transportAdded = false;
+    boolean recyclingAdded = false;
+    String nameChecker;
+    CarbonUser newUser;
+     
+     
     public CarbonGUI() {
-        usersList = new ArrayList<>();
-        
         initComponents();
+        userList = new ArrayList<>();
         footPrints = new ArrayList<>();
+        newUser = new CarbonUser("");
+        usersFootprints = newUser.getUserCarbonFootprint();
         errorLBL.setVisible(false);
-        carbonTabPane.setSelectedComponent(introPane);
+        carbonTabPane.setSelectedComponent(introSubmitPane);
         displayPanel.setVisible(false);
+        
 
     }
 
@@ -54,6 +63,7 @@ public class CarbonGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         carbonButtonGroup = new javax.swing.ButtonGroup();
+        jPanel1 = new javax.swing.JPanel();
         hiddenTabPanel = new javax.swing.JPanel();
         billsRB = new javax.swing.JRadioButton();
         transportRB = new javax.swing.JRadioButton();
@@ -66,10 +76,12 @@ public class CarbonGUI extends javax.swing.JFrame {
         newspaperLBL = new javax.swing.JLabel();
         recyclingTitleLBL = new javax.swing.JLabel();
         recyclingTitleLBLTwo = new javax.swing.JLabel();
-        introPane = new javax.swing.JPanel();
+        introSubmitPane = new javax.swing.JPanel();
         introFirstTextLBL = new javax.swing.JLabel();
-        introSecondTextLBL = new javax.swing.JLabel();
-        introThirdTextLBL = new javax.swing.JLabel();
+        userNameLBL = new javax.swing.JLabel();
+        userNameTF = new javax.swing.JTextField();
+        userNameSubmitBTN = new javax.swing.JButton();
+        greetingLBL = new javax.swing.JLabel();
         billsPane = new javax.swing.JPanel();
         electricBillLBL = new javax.swing.JLabel();
         gasBIllLBL = new javax.swing.JLabel();
@@ -84,9 +96,11 @@ public class CarbonGUI extends javax.swing.JFrame {
         carYearlyTF = new javax.swing.JTextField();
         carYearlyLBL = new javax.swing.JLabel();
         flightsMoreLBL = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         errorLBL = new javax.swing.JLabel();
         displayPanel = new javax.swing.JPanel();
         saveBTN = new javax.swing.JButton();
+        computeBTN = new javax.swing.JButton();
         displayBTN = new javax.swing.JButton();
         addBTN = new javax.swing.JButton();
         loadBTN = new javax.swing.JButton();
@@ -94,6 +108,17 @@ public class CarbonGUI extends javax.swing.JFrame {
         displayTA = new javax.swing.JTextArea();
         exitBTN = new javax.swing.JButton();
         backgroundIMGLBL = new javax.swing.JLabel();
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 44, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 270, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(186, 204, 65));
@@ -109,7 +134,7 @@ public class CarbonGUI extends javax.swing.JFrame {
         hiddenTabPanel.setForeground(new java.awt.Color(255, 255, 255,20));
         hiddenTabPanel.setLayout(new javax.swing.OverlayLayout(hiddenTabPanel));
         getContentPane().add(hiddenTabPanel);
-        hiddenTabPanel.setBounds(-30, -20, 44, 270);
+        hiddenTabPanel.setBounds(-20, 0, 44, 270);
 
         carbonButtonGroup.add(billsRB);
         billsRB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -195,52 +220,41 @@ public class CarbonGUI extends javax.swing.JFrame {
         recyclingTitleLBLTwo.setText("If you Recycle These Materials :");
         recyclePane.add(recyclingTitleLBLTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 310, -1));
 
-        carbonTabPane.addTab("recycleTab", recyclePane);
+        carbonTabPane.addTab("recyclePane", recyclePane);
 
-        introPane.setBackground(new java.awt.Color(255, 255, 255, 20));
-        introPane.setForeground(new java.awt.Color(255, 255, 255, 20));
+        introSubmitPane.setBackground(new java.awt.Color(255, 255, 255, 20));
+        introSubmitPane.setForeground(new java.awt.Color(255, 255, 255, 20));
+        introSubmitPane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         introFirstTextLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         introFirstTextLBL.setForeground(new java.awt.Color(255, 255, 255));
         introFirstTextLBL.setText("This is the Carbon Footprint Calculator");
+        introSubmitPane.add(introFirstTextLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 12, 419, -1));
 
-        introSecondTextLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        introSecondTextLBL.setForeground(new java.awt.Color(255, 255, 255));
-        introSecondTextLBL.setText("To begin please select one of the radio buttons above");
+        userNameLBL.setBackground(new java.awt.Color(51, 51, 51));
+        userNameLBL.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        userNameLBL.setForeground(new java.awt.Color(255, 255, 255));
+        userNameLBL.setText("Enter Your UserName To Begin :");
+        introSubmitPane.add(userNameLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 230, 27));
 
-        introThirdTextLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        introThirdTextLBL.setForeground(new java.awt.Color(255, 255, 255));
-        introThirdTextLBL.setText("p.s don't enter any letters when entering values ....");
+        userNameTF.setBackground(new java.awt.Color(51, 51, 51));
+        userNameTF.setForeground(new java.awt.Color(255, 255, 255));
+        userNameTF.setCaretColor(new java.awt.Color(255, 255, 255));
+        introSubmitPane.add(userNameTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, 130, 30));
 
-        javax.swing.GroupLayout introPaneLayout = new javax.swing.GroupLayout(introPane);
-        introPane.setLayout(introPaneLayout);
-        introPaneLayout.setHorizontalGroup(
-            introPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(introPaneLayout.createSequentialGroup()
-                .addContainerGap(29, Short.MAX_VALUE)
-                .addGroup(introPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, introPaneLayout.createSequentialGroup()
-                        .addGroup(introPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(introSecondTextLBL)
-                            .addComponent(introThirdTextLBL))
-                        .addGap(79, 79, 79))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, introPaneLayout.createSequentialGroup()
-                        .addComponent(introFirstTextLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(49, 49, 49))))
-        );
-        introPaneLayout.setVerticalGroup(
-            introPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(introPaneLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(introFirstTextLBL)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(introSecondTextLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(introThirdTextLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(51, Short.MAX_VALUE))
-        );
+        userNameSubmitBTN.setText("Submit");
+        userNameSubmitBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userNameSubmitBTNActionPerformed(evt);
+            }
+        });
+        introSubmitPane.add(userNameSubmitBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(356, 91, -1, -1));
 
-        carbonTabPane.addTab("tab4", introPane);
+        greetingLBL.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        greetingLBL.setForeground(new java.awt.Color(255, 255, 255));
+        introSubmitPane.add(greetingLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 450, 30));
+
+        carbonTabPane.addTab("tab4", introSubmitPane);
 
         billsPane.setBackground(new java.awt.Color(255, 255, 255, 20));
         billsPane.setForeground(new java.awt.Color(255, 255, 255, 20));
@@ -260,6 +274,7 @@ public class CarbonGUI extends javax.swing.JFrame {
         electricTF.setBackground(new java.awt.Color(51, 51, 51));
         electricTF.setForeground(new java.awt.Color(255, 255, 255));
         electricTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        electricTF.setCaretColor(new java.awt.Color(255, 255, 255));
         electricTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 electricTFActionPerformed(evt);
@@ -269,10 +284,12 @@ public class CarbonGUI extends javax.swing.JFrame {
         gasTF.setBackground(new java.awt.Color(51, 51, 51));
         gasTF.setForeground(new java.awt.Color(255, 255, 255));
         gasTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        gasTF.setCaretColor(new java.awt.Color(255, 255, 255));
 
         oilTF.setBackground(new java.awt.Color(51, 51, 51));
         oilTF.setForeground(new java.awt.Color(255, 255, 255));
         oilTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        oilTF.setCaretColor(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout billsPaneLayout = new javax.swing.GroupLayout(billsPane);
         billsPane.setLayout(billsPaneLayout);
@@ -289,7 +306,7 @@ public class CarbonGUI extends javax.swing.JFrame {
                     .addComponent(gasTF, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(electricTF, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(oilTF, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(153, Short.MAX_VALUE))
+                .addContainerGap(136, Short.MAX_VALUE))
         );
         billsPaneLayout.setVerticalGroup(
             billsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -309,7 +326,7 @@ public class CarbonGUI extends javax.swing.JFrame {
                 .addContainerGap(36, Short.MAX_VALUE))
         );
 
-        carbonTabPane.addTab("tab4", billsPane);
+        carbonTabPane.addTab("billsPane", billsPane);
 
         transportPane.setBackground(new java.awt.Color(255, 255, 255, 20));
 
@@ -320,16 +337,19 @@ public class CarbonGUI extends javax.swing.JFrame {
         flightsMoreTF.setBackground(new java.awt.Color(51, 51, 51));
         flightsMoreTF.setForeground(new java.awt.Color(255, 255, 255));
         flightsMoreTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        flightsMoreTF.setCaretColor(new java.awt.Color(255, 255, 255));
         flightsMoreTF.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         flightsLessTF.setBackground(new java.awt.Color(51, 51, 51));
         flightsLessTF.setForeground(new java.awt.Color(255, 255, 255));
         flightsLessTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        flightsLessTF.setCaretColor(new java.awt.Color(255, 255, 255));
         flightsLessTF.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         carYearlyTF.setBackground(new java.awt.Color(51, 51, 51));
         carYearlyTF.setForeground(new java.awt.Color(255, 255, 255));
         carYearlyTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        carYearlyTF.setCaretColor(new java.awt.Color(255, 255, 255));
         carYearlyTF.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         carYearlyLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -380,7 +400,20 @@ public class CarbonGUI extends javax.swing.JFrame {
                 .addContainerGap(54, Short.MAX_VALUE))
         );
 
-        carbonTabPane.addTab("tab4", transportPane);
+        carbonTabPane.addTab("transportPane", transportPane);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 560, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 153, Short.MAX_VALUE)
+        );
+
+        carbonTabPane.addTab("tab5", jPanel2);
 
         getContentPane().add(carbonTabPane);
         carbonTabPane.setBounds(-100, 70, 670, 153);
@@ -402,6 +435,15 @@ public class CarbonGUI extends javax.swing.JFrame {
         saveBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveBTNActionPerformed(evt);
+            }
+        });
+
+        computeBTN.setBackground(new java.awt.Color(102, 102, 102));
+        computeBTN.setForeground(new java.awt.Color(255, 255, 255));
+        computeBTN.setText("Compute Total");
+        computeBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                computeBTNActionPerformed(evt);
             }
         });
 
@@ -451,17 +493,20 @@ public class CarbonGUI extends javax.swing.JFrame {
         displayPanelLayout.setHorizontalGroup(
             displayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(displayPanelLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(addBTN)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(loadBTN)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(saveBTN)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(displayBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(158, Short.MAX_VALUE))
-            .addGroup(displayPanelLayout.createSequentialGroup()
-                .addComponent(jScrollPane2)
+                .addGroup(displayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(displayPanelLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(addBTN)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(loadBTN)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(saveBTN)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(displayBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(computeBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                        .addGap(14, 14, 14))
+                    .addComponent(jScrollPane2))
                 .addContainerGap())
         );
         displayPanelLayout.setVerticalGroup(
@@ -472,10 +517,11 @@ public class CarbonGUI extends javax.swing.JFrame {
                     .addComponent(addBTN)
                     .addComponent(loadBTN)
                     .addComponent(saveBTN)
-                    .addComponent(displayBTN))
+                    .addComponent(displayBTN)
+                    .addComponent(computeBTN))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         getContentPane().add(displayPanel);
@@ -502,27 +548,25 @@ public class CarbonGUI extends javax.swing.JFrame {
     public void showDisplay(){
         displayPanel.setVisible(true);
     }
-   
-      
-//   public boolean isObjAlreadyInList() {
-//    for(CarbonFootPrint obj : this.footPrints)
-//        if(obj instanceof CarbonFootPrint)
-//            return true;
-//    return false;
-//}
-    
+       
     
     private void electricTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_electricTFActionPerformed
         // TODO add your handling code here:
 
     }//GEN-LAST:event_electricTFActionPerformed
 
+ 
     private void addBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTNActionPerformed
         // TODO add your handling code here:
         
         double totalValue;
         try{
         if (billsRB.isSelected()) {
+            if(billsAdded){
+                JOptionPane.showMessageDialog(null, "Bills have alrady been added");
+                clearFields();
+                return;
+            }
             electricBill = Double.parseDouble(electricTF.getText());
             gasBill = Double.parseDouble(gasTF.getText());
             oilBill = Double.parseDouble(oilTF.getText());
@@ -530,13 +574,20 @@ public class CarbonGUI extends javax.swing.JFrame {
             CarbonFootPrint carbonBills = new CarbonBills("Bills", value, electricBill, gasBill, oilBill);
             
             carbonBills.computeCarbonFoot();
-            footPrints.add(carbonBills);
+            newUser.addFootprint(carbonBills);
             displayTA.append("\nMonthly Bills Added");
             errorLBL.setVisible(false);
+            billsAdded = true;
             clearFields();
+            
         } 
         if (recyclingRB.isSelected()) {  // addBTN logic for recycling radio button or equivalent
             // Get the checkbox states to determine if aluminum or newspaper is being recycled
+             if(recyclingAdded){
+                JOptionPane.showMessageDialog(null, "Recycling has alrady been added");
+                clearFields();
+                return;
+            }
             displayPanel.setVisible(true);
             boolean isAluminumRecycled = false;
             boolean isNewspaperRecycled = false;
@@ -551,11 +602,18 @@ public class CarbonGUI extends javax.swing.JFrame {
             carbonRecycle.computeCarbonFoot();
 
             footPrints.add(carbonRecycle);
+            newUser.addFootprint(carbonRecycle);
             displayTA.append("\nRecycling added");
             errorLBL.setVisible(false);
+            recyclingAdded = true;
             clearFields();       
     }//GEN-LAST:event_addBTNActionPerformed
          if(transportRB.isSelected()){
+              if(transportAdded){
+                JOptionPane.showMessageDialog(null, "Transport has alrady been added");
+                clearFields();
+                return;
+            }
             flightLessFour = Double.parseDouble(flightsLessTF.getText());
             flightMoreFour = Double.parseDouble(flightsMoreTF.getText());
             carYearlyMileage = Double.parseDouble(carYearlyTF.getText());
@@ -563,11 +621,14 @@ public class CarbonGUI extends javax.swing.JFrame {
             CarbonFootPrint carbonTransport = new CarbonTransport("Transport", value, flightLessFour, flightMoreFour,  carYearlyMileage);
             carbonTransport.computeCarbonFoot();
             footPrints.add(carbonTransport);
+            newUser.addFootprint(carbonTransport);
             displayTA.append("\nTransport added");
             errorLBL.setVisible(false);
+            transportAdded = true;
             clearFields();
             
         }
+        
         } 
         
         catch(NumberFormatException e){
@@ -587,14 +648,15 @@ public class CarbonGUI extends javax.swing.JFrame {
             f = new File("footprints.dat");
             fStream = new FileOutputStream(f);
             oStream = new ObjectOutputStream(fStream);
+            oStream.writeObject(userList);
             oStream.writeObject(footPrints);
             oStream.close();
             displayTA.append("\nSuccesfully saved file");
-            footPrints.clear();
             System.out.println(footPrints);
         } catch (IOException e) {
             System.out.println("I/O e :" + e);
         }
+        
     }//GEN-LAST:event_saveBTNActionPerformed
      private void loadFile() {
         File f;
@@ -604,6 +666,7 @@ public class CarbonGUI extends javax.swing.JFrame {
             f = new File("footprints.dat");
             fStream = new FileInputStream(f);
             oStream = new ObjectInputStream(fStream);
+            userList = (ArrayList<CarbonUser>) oStream.readObject();
             footPrints = (ArrayList<CarbonFootPrint>) oStream.readObject();
             oStream.close();
 
@@ -628,11 +691,13 @@ public class CarbonGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         loadFile();
         displayTA.append("\nData loaded successfully.\n");
+        for(CarbonUser user : userList){
+            displayTA.append(user.getUserName() +"\n");
         for (CarbonFootPrint footPrint : footPrints) {
             displayTA.append(footPrint.toString() + "\n");
             
         }
-    
+        }
     }//GEN-LAST:event_loadBTNActionPerformed
 
     private void displayBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayBTNActionPerformed
@@ -693,7 +758,43 @@ public class CarbonGUI extends javax.swing.JFrame {
         this.setVisible(false); 
         this.dispose();
     }//GEN-LAST:event_exitBTNActionPerformed
-   
+
+    private void userNameSubmitBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameSubmitBTNActionPerformed
+        // TODO add your handling code here:
+        errorMessage = "Please enter a User name to continue";
+        File f;
+        FileOutputStream fStream;
+        ObjectOutputStream oStream;
+        userName = userNameTF.getText();
+        newUser  = new CarbonUser(userName);
+        userList.add(newUser);
+        if (userNameTF.getText() != "" || userNameTF.getText() != " ") { 
+                userNameTF.setVisible(false);
+                userNameLBL.setVisible(false);
+                userNameSubmitBTN.setVisible(false);
+                greetingLBL.setText("Cheers " + userName + ", Click a button up top to begin");
+            try { 
+                f = new File("footprints.dat");
+                fStream = new FileOutputStream(f);
+                oStream = new ObjectOutputStream(fStream);
+                oStream.writeObject(newUser);
+                oStream.close();
+                JOptionPane.showMessageDialog(null, userName);
+                System.out.println(userName);
+               
+            } catch (IOException e) {
+                System.out.println("I/O e :" + e);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, errorMessage);
+        }
+    }//GEN-LAST:event_userNameSubmitBTNActionPerformed
+
+    private void computeBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_computeBTNActionPerformed
+        // TODO add your handling code here:
+      displayTA.append("\n" + userName + " CarbonTotal " + newUser.computeTheUsersFootprint()); 
+    }//GEN-LAST:event_computeBTNActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -746,6 +847,7 @@ try {
     private javax.swing.JTextField carYearlyTF;
     private javax.swing.ButtonGroup carbonButtonGroup;
     private javax.swing.JTabbedPane carbonTabPane;
+    private javax.swing.JButton computeBTN;
     private javax.swing.JButton displayBTN;
     private javax.swing.JPanel displayPanel;
     private javax.swing.JTextArea displayTA;
@@ -759,11 +861,12 @@ try {
     private javax.swing.JTextField flightsMoreTF;
     private javax.swing.JLabel gasBIllLBL;
     private javax.swing.JTextField gasTF;
+    private javax.swing.JLabel greetingLBL;
     private javax.swing.JPanel hiddenTabPanel;
     private javax.swing.JLabel introFirstTextLBL;
-    private javax.swing.JPanel introPane;
-    private javax.swing.JLabel introSecondTextLBL;
-    private javax.swing.JLabel introThirdTextLBL;
+    private javax.swing.JPanel introSubmitPane;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton loadBTN;
     private javax.swing.JCheckBox newspaperCB;
@@ -777,5 +880,8 @@ try {
     private javax.swing.JButton saveBTN;
     private javax.swing.JPanel transportPane;
     private javax.swing.JRadioButton transportRB;
+    private javax.swing.JLabel userNameLBL;
+    private javax.swing.JButton userNameSubmitBTN;
+    private javax.swing.JTextField userNameTF;
     // End of variables declaration//GEN-END:variables
 }
