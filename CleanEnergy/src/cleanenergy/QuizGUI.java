@@ -93,7 +93,7 @@ public class QuizGUI extends javax.swing.JFrame {
         titlLBL.setForeground(new java.awt.Color(255, 255, 255));
         titlLBL.setText("Welcome to the Quiz!");
         getContentPane().add(titlLBL);
-        titlLBL.setBounds(166, 18, 187, 22);
+        titlLBL.setBounds(166, 18, 193, 23);
 
         exitBTN.setBackground(new java.awt.Color(255, 51, 0));
         exitBTN.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -105,7 +105,7 @@ public class QuizGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(exitBTN);
-        exitBTN.setBounds(31, 21, 72, 21);
+        exitBTN.setBounds(31, 21, 72, 23);
 
         questionTA.setEditable(false);
         questionTA.setBackground(new java.awt.Color(51, 51, 51));
@@ -125,7 +125,7 @@ public class QuizGUI extends javax.swing.JFrame {
         instuctionLBL.setForeground(new java.awt.Color(255, 255, 255));
         instuctionLBL.setText("Select one of the three buttons");
         getContentPane().add(instuctionLBL);
-        instuctionLBL.setBounds(90, 140, 260, 17);
+        instuctionLBL.setBounds(90, 140, 260, 19);
 
         nextBTN.setBackground(new java.awt.Color(51, 255, 51));
         nextBTN.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -143,7 +143,7 @@ public class QuizGUI extends javax.swing.JFrame {
         scoreLBL.setForeground(new java.awt.Color(255, 255, 255));
         scoreLBL.setText("Score: ");
         getContentPane().add(scoreLBL);
-        scoreLBL.setBounds(120, 240, 39, 15);
+        scoreLBL.setBounds(120, 240, 39, 16);
 
         startBTN.setBackground(new java.awt.Color(51, 255, 51));
         startBTN.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -170,7 +170,7 @@ public class QuizGUI extends javax.swing.JFrame {
 
         buttonGroup1.add(answer1RBTN);
         answer1RBTN.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        answer1RBTN.setForeground(new java.awt.Color(255, 255, 255));
+        answer1RBTN.setForeground(new java.awt.Color(102, 102, 102));
         answer1RBTN.setText("1");
         answer1RBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -178,11 +178,11 @@ public class QuizGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(answer1RBTN);
-        answer1RBTN.setBounds(20, 170, 130, 21);
+        answer1RBTN.setBounds(20, 170, 130, 24);
 
         buttonGroup1.add(answer2RBTN);
         answer2RBTN.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        answer2RBTN.setForeground(new java.awt.Color(255, 255, 255));
+        answer2RBTN.setForeground(new java.awt.Color(102, 102, 102));
         answer2RBTN.setText("2");
         answer2RBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -190,11 +190,11 @@ public class QuizGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(answer2RBTN);
-        answer2RBTN.setBounds(150, 170, 140, 21);
+        answer2RBTN.setBounds(150, 170, 140, 24);
 
         buttonGroup1.add(answer3RBTN);
         answer3RBTN.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        answer3RBTN.setForeground(new java.awt.Color(255, 255, 255));
+        answer3RBTN.setForeground(new java.awt.Color(102, 102, 102));
         answer3RBTN.setText("3");
         answer3RBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,7 +202,7 @@ public class QuizGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(answer3RBTN);
-        answer3RBTN.setBounds(300, 170, 140, 21);
+        answer3RBTN.setBounds(300, 170, 140, 24);
 
         scoreTF.setBackground(new java.awt.Color(51, 51, 51));
         scoreTF.setForeground(new java.awt.Color(255, 255, 255));
@@ -212,7 +212,7 @@ public class QuizGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(scoreTF);
-        scoreTF.setBounds(180, 240, 43, 23);
+        scoreTF.setBounds(180, 240, 43, 22);
 
         reviewTF.setBackground(new java.awt.Color(51, 51, 51));
         reviewTF.setForeground(new java.awt.Color(255, 255, 255));
@@ -222,7 +222,7 @@ public class QuizGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(reviewTF);
-        reviewTF.setBounds(400, 90, 87, 23);
+        reviewTF.setBounds(400, 90, 87, 22);
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
