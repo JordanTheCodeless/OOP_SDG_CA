@@ -70,16 +70,14 @@ public class QuizGUI extends javax.swing.JFrame {
         answer3RBTN = new javax.swing.JRadioButton();
         scoreTF = new javax.swing.JTextField();
         reviewTF = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        reviewLBL = new javax.swing.JLabel();
         submitBTN = new javax.swing.JButton();
-        DisplayBTN = new javax.swing.JButton();
+        displayBTN = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(0, 0, 609, 374));
-        setMaximumSize(new java.awt.Dimension(600, 374));
         setMinimumSize(new java.awt.Dimension(600, 374));
-        setPreferredSize(new java.awt.Dimension(600, 374));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -219,11 +217,11 @@ public class QuizGUI extends javax.swing.JFrame {
         getContentPane().add(reviewTF);
         reviewTF.setBounds(400, 90, 87, 22);
 
-        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Leave a Review 1-5?");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(370, 60, 140, 20);
+        reviewLBL.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        reviewLBL.setForeground(new java.awt.Color(255, 255, 255));
+        reviewLBL.setText("Leave a Review 1-5?");
+        getContentPane().add(reviewLBL);
+        reviewLBL.setBounds(370, 60, 140, 20);
 
         submitBTN.setBackground(new java.awt.Color(102, 102, 102));
         submitBTN.setForeground(new java.awt.Color(255, 255, 255));
@@ -236,16 +234,16 @@ public class QuizGUI extends javax.swing.JFrame {
         getContentPane().add(submitBTN);
         submitBTN.setBounds(352, 120, 90, 23);
 
-        DisplayBTN.setBackground(new java.awt.Color(102, 102, 102));
-        DisplayBTN.setForeground(new java.awt.Color(255, 255, 255));
-        DisplayBTN.setText("Display");
-        DisplayBTN.addActionListener(new java.awt.event.ActionListener() {
+        displayBTN.setBackground(new java.awt.Color(102, 102, 102));
+        displayBTN.setForeground(new java.awt.Color(255, 255, 255));
+        displayBTN.setText("Display");
+        displayBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DisplayBTNActionPerformed(evt);
+                displayBTNActionPerformed(evt);
             }
         });
-        getContentPane().add(DisplayBTN);
-        DisplayBTN.setBounds(460, 120, 90, 23);
+        getContentPane().add(displayBTN);
+        displayBTN.setBounds(460, 120, 90, 23);
 
         jLabel2.setBackground(new java.awt.Color(51, 51, 51));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cleanenergy/sunrise-7674594_640.jpg"))); // NOI18N
@@ -344,7 +342,7 @@ public class QuizGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_submitBTNActionPerformed
 
-    private void DisplayBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisplayBTNActionPerformed
+    private void displayBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayBTNActionPerformed
         // TODO add your handling code here:
         File iFile;
         BufferedReader buffR;
@@ -366,7 +364,7 @@ public class QuizGUI extends javax.swing.JFrame {
         }catch(IOException e){
             errorTA.setText("error: "+e.getMessage());
         }
-    }//GEN-LAST:event_DisplayBTNActionPerformed
+    }//GEN-LAST:event_displayBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -407,20 +405,20 @@ public class QuizGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton DisplayBTN;
     private javax.swing.JRadioButton answer1RBTN;
     private javax.swing.JRadioButton answer2RBTN;
     private javax.swing.JRadioButton answer3RBTN;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton displayBTN;
     private javax.swing.JTextArea errorTA;
     private javax.swing.JButton exitBTN;
     private javax.swing.JLabel instuctionLBL;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton nextBTN;
     private javax.swing.JTextArea questionTA;
+    private javax.swing.JLabel reviewLBL;
     private javax.swing.JTextField reviewTF;
     private javax.swing.JLabel scoreLBL;
     private javax.swing.JTextField scoreTF;
