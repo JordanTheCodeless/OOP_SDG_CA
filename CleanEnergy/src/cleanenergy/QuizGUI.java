@@ -1,9 +1,13 @@
 package cleanenergy;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -40,16 +44,6 @@ public class QuizGUI extends javax.swing.JFrame {
             buttonGroup1.clearSelection();
         }
     }
-    private void subReview(){
-        String rev = reviewTF.getText();// since the filewriter is only used in the reviews and disp i will leave it in this method and one more to be used in the review submission and view
-        try(FileWriter writer = new FileWriter("reviews.dat")){ //simple method to save reviews to a file 
-            writer.write("user review:" + rev);
-            writer.write("\n");
-            errorTA.setText("file added and saved in reveiws.dat file");
-        } catch(Exception e){
-            errorTA.setText("error"+ e.getMessage());
-        }
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -78,6 +72,7 @@ public class QuizGUI extends javax.swing.JFrame {
         reviewTF = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         submitBTN = new javax.swing.JButton();
+        DisplayBTN = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -231,7 +226,6 @@ public class QuizGUI extends javax.swing.JFrame {
         jLabel1.setBounds(370, 60, 140, 20);
 
         submitBTN.setBackground(new java.awt.Color(102, 102, 102));
-        submitBTN.setFont(new java.awt.Font("Century Gothic", 0, 18));
         submitBTN.setForeground(new java.awt.Color(255, 255, 255));
         submitBTN.setText("Submit");
         submitBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -240,7 +234,18 @@ public class QuizGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(submitBTN);
-        submitBTN.setBounds(410, 120, 72, 23);
+        submitBTN.setBounds(352, 120, 90, 23);
+
+        DisplayBTN.setBackground(new java.awt.Color(102, 102, 102));
+        DisplayBTN.setForeground(new java.awt.Color(255, 255, 255));
+        DisplayBTN.setText("Display");
+        DisplayBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DisplayBTNActionPerformed(evt);
+            }
+        });
+        getContentPane().add(DisplayBTN);
+        DisplayBTN.setBounds(460, 120, 90, 23);
 
         jLabel2.setBackground(new java.awt.Color(51, 51, 51));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cleanenergy/sunrise-7674594_640.jpg"))); // NOI18N
@@ -271,8 +276,8 @@ public class QuizGUI extends javax.swing.JFrame {
 
     private void exitBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBTNActionPerformed
         // TODO add your handling code here:
-        //CleanEnergyGUI mainGUI = new CleanEnergyGUI();
-        //mainGUI.setVisible(true); 
+        CleanEnergyGUI mainGUI = new CleanEnergyGUI(); 
+        mainGUI.setVisible(true); 
         this.setVisible(false); 
         this.dispose();
     }//GEN-LAST:event_exitBTNActionPerformed
@@ -320,8 +325,48 @@ public class QuizGUI extends javax.swing.JFrame {
 
     private void submitBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBTNActionPerformed
         // TODO add your handling code here:
-        subReview();
+        File oFile;
+        BufferedWriter buffW;
+        FileWriter fileW;
+        
+        String rev = reviewTF.getText();
+        
+        try{// adding file, file writer and buffered writer, to add reviews into the file. also creates a new line on each review submission
+            oFile = new File("reviews.txt");
+            fileW = new FileWriter(oFile, true);//true appends new data to the end of the file
+            buffW = new BufferedWriter(fileW);
+            buffW.write(rev);
+            buffW.newLine();
+            buffW.close();
+            errorTA.setText("review added");
+        }catch(IOException e){
+            errorTA.setText("error: " +e.getMessage());
+        }
     }//GEN-LAST:event_submitBTNActionPerformed
+
+    private void DisplayBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisplayBTNActionPerformed
+        // TODO add your handling code here:
+        File iFile;
+        BufferedReader buffR;
+        FileReader  fileR;
+        
+        try{//reads from the file and displays it one by one in a popup windows
+            iFile = new File("reviews.txt");
+            fileR = new FileReader(iFile);
+            buffR = new BufferedReader(fileR);
+            String revList = buffR.readLine();
+            
+            while(revList != null){
+               JOptionPane.showMessageDialog(null,"user review:"+ revList);
+                revList = buffR.readLine();
+                
+            }
+            
+            buffR.close();
+        }catch(IOException e){
+            errorTA.setText("error: "+e.getMessage());
+        }
+    }//GEN-LAST:event_DisplayBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -362,6 +407,7 @@ public class QuizGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton DisplayBTN;
     private javax.swing.JRadioButton answer1RBTN;
     private javax.swing.JRadioButton answer2RBTN;
     private javax.swing.JRadioButton answer3RBTN;
