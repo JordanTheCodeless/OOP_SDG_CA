@@ -521,7 +521,7 @@ public class CarbonGUI extends javax.swing.JFrame {
         );
 
         getContentPane().add(displayPanel);
-        displayPanel.setBounds(50, 220, 500, 130);
+        displayPanel.setBounds(50, 220, 477, 135);
 
         exitBTN.setBackground(new java.awt.Color(255, 0, 51));
         exitBTN.setText("EXIT");
