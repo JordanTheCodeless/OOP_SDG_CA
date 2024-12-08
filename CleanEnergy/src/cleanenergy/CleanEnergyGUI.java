@@ -101,7 +101,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(exitMainBTN);
-        exitMainBTN.setBounds(20, 300, 84, 23);
+        exitMainBTN.setBounds(20, 300, 84, 27);
 
         mainTitleLBL.setBackground(new java.awt.Color(255, 255, 255));
         mainTitleLBL.setFont(new java.awt.Font("Lucida Grande", 3, 36)); // NOI18N

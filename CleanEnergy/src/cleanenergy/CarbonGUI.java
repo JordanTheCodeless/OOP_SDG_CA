@@ -46,6 +46,9 @@ public class CarbonGUI extends javax.swing.JFrame {
         billsRB.setVisible(false);
         transportRB.setVisible(false);
         recyclingRB.setVisible(false);
+        
+        
+                
 
     }
 
@@ -60,10 +63,10 @@ public class CarbonGUI extends javax.swing.JFrame {
 
         carbonButtonGroup = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        hiddenTabPanel = new javax.swing.JPanel();
         billsRB = new javax.swing.JRadioButton();
         transportRB = new javax.swing.JRadioButton();
         recyclingRB = new javax.swing.JRadioButton();
+        hiddenTabPanel = new javax.swing.JPanel();
         carbonTabPane = new javax.swing.JTabbedPane();
         recyclePane = new javax.swing.JPanel();
         aluminumCB = new javax.swing.JCheckBox();
@@ -92,7 +95,6 @@ public class CarbonGUI extends javax.swing.JFrame {
         carYearlyTF = new javax.swing.JTextField();
         carYearlyLBL = new javax.swing.JLabel();
         flightsMoreLBL = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
         errorLBL = new javax.swing.JLabel();
         displayPanel = new javax.swing.JPanel();
         saveBTN = new javax.swing.JButton();
@@ -126,12 +128,7 @@ public class CarbonGUI extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(691, 374));
         getContentPane().setLayout(null);
 
-        hiddenTabPanel.setBackground(new java.awt.Color(255, 255, 255, 20));
-        hiddenTabPanel.setForeground(new java.awt.Color(255, 255, 255,20));
-        hiddenTabPanel.setLayout(new javax.swing.OverlayLayout(hiddenTabPanel));
-        getContentPane().add(hiddenTabPanel);
-        hiddenTabPanel.setBounds(-20, 0, 44, 270);
-
+        billsRB.setBackground(new java.awt.Color(0, 0, 0, 20));
         carbonButtonGroup.add(billsRB);
         billsRB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         billsRB.setForeground(new java.awt.Color(255, 255, 255));
@@ -149,6 +146,7 @@ public class CarbonGUI extends javax.swing.JFrame {
         getContentPane().add(billsRB);
         billsRB.setBounds(70, 20, 90, 20);
 
+        transportRB.setBackground(new java.awt.Color(0, 0, 0, 20));
         carbonButtonGroup.add(transportRB);
         transportRB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         transportRB.setForeground(new java.awt.Color(255, 255, 255));
@@ -159,8 +157,9 @@ public class CarbonGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(transportRB);
-        transportRB.setBounds(210, 20, 140, 20);
+        transportRB.setBounds(190, 20, 140, 20);
 
+        recyclingRB.setBackground(new java.awt.Color(0, 0, 0, 20));
         carbonButtonGroup.add(recyclingRB);
         recyclingRB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         recyclingRB.setForeground(new java.awt.Color(255, 255, 255));
@@ -171,24 +170,36 @@ public class CarbonGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(recyclingRB);
-        recyclingRB.setBounds(380, 20, 150, 20);
+        recyclingRB.setBounds(360, 20, 120, 20);
 
-        carbonTabPane.setBackground(new java.awt.Color(255, 255, 255, 20));
+        hiddenTabPanel.setBackground(new java.awt.Color(255, 255, 255, 20));
+        hiddenTabPanel.setForeground(new java.awt.Color(255, 255, 255,20));
+        hiddenTabPanel.setLayout(new javax.swing.OverlayLayout(hiddenTabPanel));
+        getContentPane().add(hiddenTabPanel);
+        hiddenTabPanel.setBounds(-20, 0, 44, 270);
+
+        carbonTabPane.setBackground(new java.awt.Color(0, 0, 0, 0));
+        carbonTabPane.setForeground(new java.awt.Color(255, 255, 255));
         carbonTabPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
 
-        recyclePane.setBackground(new java.awt.Color(255, 255, 255,20));
+        recyclePane.setBackground(new java.awt.Color(51, 51, 51));
+        recyclePane.setFocusable(false);
         recyclePane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        aluminumCB.setContentAreaFilled(false);
         aluminumCB.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        aluminumCB.setOpaque(false);
         aluminumCB.setPreferredSize(new java.awt.Dimension(24, 24));
         aluminumCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aluminumCBActionPerformed(evt);
             }
         });
-        recyclePane.add(aluminumCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, 40, 20));
+        recyclePane.add(aluminumCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, 20, 20));
 
+        newspaperCB.setContentAreaFilled(false);
         newspaperCB.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        newspaperCB.setOpaque(false);
         newspaperCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 newspaperCBActionPerformed(evt);
@@ -218,8 +229,8 @@ public class CarbonGUI extends javax.swing.JFrame {
 
         carbonTabPane.addTab("recyclePane", recyclePane);
 
-        introSubmitPane.setBackground(new java.awt.Color(255, 255, 255, 20));
-        introSubmitPane.setForeground(new java.awt.Color(255, 255, 255, 20));
+        introSubmitPane.setBackground(new java.awt.Color(51, 51, 51));
+        introSubmitPane.setForeground(new java.awt.Color(255, 255, 255));
         introSubmitPane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         introFirstTextLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -233,7 +244,7 @@ public class CarbonGUI extends javax.swing.JFrame {
         userNameLBL.setText("Enter Your UserName To Begin :");
         introSubmitPane.add(userNameLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 230, 27));
 
-        userNameTF.setBackground(new java.awt.Color(51, 51, 51));
+        userNameTF.setBackground(new java.awt.Color(153, 153, 153));
         userNameTF.setForeground(new java.awt.Color(255, 255, 255));
         userNameTF.setCaretColor(new java.awt.Color(255, 255, 255));
         introSubmitPane.add(userNameTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, 130, 30));
@@ -252,7 +263,7 @@ public class CarbonGUI extends javax.swing.JFrame {
 
         carbonTabPane.addTab("tab4", introSubmitPane);
 
-        billsPane.setBackground(new java.awt.Color(255, 255, 255, 20));
+        billsPane.setBackground(new java.awt.Color(51, 51, 51));
         billsPane.setForeground(new java.awt.Color(255, 255, 255, 20));
 
         electricBillLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -267,7 +278,7 @@ public class CarbonGUI extends javax.swing.JFrame {
         oilBillLBL.setForeground(new java.awt.Color(255, 255, 255));
         oilBillLBL.setText("Oil bill :");
 
-        electricTF.setBackground(new java.awt.Color(51, 51, 51));
+        electricTF.setBackground(new java.awt.Color(153, 153, 153));
         electricTF.setForeground(new java.awt.Color(255, 255, 255));
         electricTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         electricTF.setCaretColor(new java.awt.Color(255, 255, 255));
@@ -277,12 +288,12 @@ public class CarbonGUI extends javax.swing.JFrame {
             }
         });
 
-        gasTF.setBackground(new java.awt.Color(51, 51, 51));
+        gasTF.setBackground(new java.awt.Color(153, 153, 153));
         gasTF.setForeground(new java.awt.Color(255, 255, 255));
         gasTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         gasTF.setCaretColor(new java.awt.Color(255, 255, 255));
 
-        oilTF.setBackground(new java.awt.Color(51, 51, 51));
+        oilTF.setBackground(new java.awt.Color(153, 153, 153));
         oilTF.setForeground(new java.awt.Color(255, 255, 255));
         oilTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         oilTF.setCaretColor(new java.awt.Color(255, 255, 255));
@@ -302,7 +313,7 @@ public class CarbonGUI extends javax.swing.JFrame {
                     .addComponent(gasTF, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(electricTF, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(oilTF, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addContainerGap(142, Short.MAX_VALUE))
         );
         billsPaneLayout.setVerticalGroup(
             billsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -324,25 +335,25 @@ public class CarbonGUI extends javax.swing.JFrame {
 
         carbonTabPane.addTab("billsPane", billsPane);
 
-        transportPane.setBackground(new java.awt.Color(255, 255, 255, 20));
+        transportPane.setBackground(new java.awt.Color(51, 51, 51));
 
         flightsLessLBL.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         flightsLessLBL.setForeground(new java.awt.Color(255, 255, 255));
         flightsLessLBL.setText("Flights that were four hours or more :");
 
-        flightsMoreTF.setBackground(new java.awt.Color(51, 51, 51));
+        flightsMoreTF.setBackground(new java.awt.Color(153, 153, 153));
         flightsMoreTF.setForeground(new java.awt.Color(255, 255, 255));
         flightsMoreTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         flightsMoreTF.setCaretColor(new java.awt.Color(255, 255, 255));
         flightsMoreTF.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
-        flightsLessTF.setBackground(new java.awt.Color(51, 51, 51));
+        flightsLessTF.setBackground(new java.awt.Color(153, 153, 153));
         flightsLessTF.setForeground(new java.awt.Color(255, 255, 255));
         flightsLessTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         flightsLessTF.setCaretColor(new java.awt.Color(255, 255, 255));
         flightsLessTF.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
-        carYearlyTF.setBackground(new java.awt.Color(51, 51, 51));
+        carYearlyTF.setBackground(new java.awt.Color(153, 153, 153));
         carYearlyTF.setForeground(new java.awt.Color(255, 255, 255));
         carYearlyTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         carYearlyTF.setCaretColor(new java.awt.Color(255, 255, 255));
@@ -361,7 +372,7 @@ public class CarbonGUI extends javax.swing.JFrame {
         transportPaneLayout.setHorizontalGroup(
             transportPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, transportPaneLayout.createSequentialGroup()
-                .addGap(86, 86, 86)
+                .addGap(85, 85, 85)
                 .addGroup(transportPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(transportPaneLayout.createSequentialGroup()
                         .addComponent(carYearlyLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -393,26 +404,13 @@ public class CarbonGUI extends javax.swing.JFrame {
                 .addGroup(transportPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(carYearlyLBL)
                     .addComponent(carYearlyTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         carbonTabPane.addTab("transportPane", transportPane);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 560, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 153, Short.MAX_VALUE)
-        );
-
-        carbonTabPane.addTab("tab5", jPanel2);
-
         getContentPane().add(carbonTabPane);
-        carbonTabPane.setBounds(-100, 70, 670, 153);
+        carbonTabPane.setBounds(-100, 70, 670, 163);
 
         errorLBL.setBackground(new java.awt.Color(204, 0, 0));
         errorLBL.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -521,7 +519,7 @@ public class CarbonGUI extends javax.swing.JFrame {
         );
 
         getContentPane().add(displayPanel);
-        displayPanel.setBounds(50, 220, 500, 130);
+        displayPanel.setBounds(50, 220, 475, 133);
 
         exitBTN.setBackground(new java.awt.Color(255, 0, 51));
         exitBTN.setText("EXIT");
@@ -872,7 +870,6 @@ try {
     private javax.swing.JLabel introFirstTextLBL;
     private javax.swing.JPanel introSubmitPane;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton loadBTN;
     private javax.swing.JCheckBox newspaperCB;
